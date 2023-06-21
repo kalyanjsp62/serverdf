@@ -1,0 +1,2502 @@
+
+41617628
+
+215663
+
+646253351
+
+918619
+
+793
+
+918619
+
+QM1:
+
+login as: root
+root@192.168.0.5's password:
+Last login: Tue Jul  5 00:07:31 2022
+[root@localhost ~]# dspmq
+
+QMNAME(MQ1)                                               STATUS(Ended unexpectedly)
+
+QMNAME(QM2)                                               STATUS(Ended unexpectedly)
+
+QMNAME(TEST)                                              STATUS(Ended unexpectedly)
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# su - mqm
+Last login: Mon Jul  4 01:19:30 PDT 2022 on pts/0
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(MQ1)                                               STATUS(Ended unexpectedly)
+QMNAME(QM2)                                               STATUS(Ended unexpectedly)
+QMNAME(TEST)                                              STATUS(Ended unexpectedly)
+-bash-4.2$
+-bash-4.2$ dltmq MQ1
+-bash: dltmq: command not found
+-bash-4.2$ dltmqm MQ1
+IBM MQ queue manager 'MQ1' deleted.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dltmqm QM2
+IBM MQ queue manager 'QM2' deleted.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dltmqm TEST
+IBM MQ queue manager 'TEST' deleted.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ crtmqm ban
+There are 88 days left in the trial period for this copy of IBM MQ.
+IBM MQ queue manager created.
+Directory '/var/mqm/qmgrs/ban' created.
+The queue manager is associated with installation 'Installation1'.
+Creating or replacing default objects for queue manager 'ban'.
+Default objects statistics : 83 created. 0 replaced. 0 failed.
+Completing setup.
+Setup completed.
+-bash-4.2$ strmqm ban
+There are 88 days left in the trial period for this copy of IBM MQ.
+The system resource RLIMIT_NOFILE is set at an unusually low level for IBM MQ.
+IBM MQ queue manager 'ban' starting.
+The queue manager is associated with installation 'Installation1'.
+5 log records accessed on queue manager 'ban' during the log replay phase.
+Log replay for queue manager 'ban' complete.
+Transaction manager state recovered for queue manager 'ban'.
+IBM MQ queue manager 'ban' started using V9.2.0.0.
+-bash-4.2$ dspmq
+QMNAME(ban)                                               STATUS(Running)
+-bash-4.2$
+-bash-4.2$ runmqsc ban
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager ban.
+
+
+DEFINE QR(TEST_RQ1) RNAME(TESTLQ) RQNAME(HYD) XMITQ(XMITQ)
+     1 : DEFINE QR(TEST_RQ1) RNAME(TESTLQ) RQNAME(HYD) XMITQ(XMITQ)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE QR(TEST_RQ1) RNAME(TESTLQ) R
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE QREMOTE( q_name )
+   [ CLUSNL( namelist_name ) ]             [ CLUSTER( cluster_name ) ]
+   [ CLWLPRTY( integer ) ]                 [ CLWLRANK( integer ) ]
+   [ CUSTOM( string ) ]
+   [ DEFBIND( NOTFIXED | OPEN | GROUP ) ]  [ DEFPRESP( SYNC | ASYNC ) ]
+   [ DEFPRTY( integer ) ]                  [ DEFPSIST( YES | NO ) ]
+   [ DESCR( string ) ]                     [ LIKE( qremote_name ) ]
+   [ PUT( ENABLED | DISABLED ) ]           [ REPLACE | NOREPLACE ]
+   [ RNAME( string ) ]                     [ RQMNAME( string ) ]
+   [ SCOPE( QMGR | CELL ) ]                [ XMITQ( string ) ]
+
+DEFINE QREMOTE(TEST_RQ1) RNAME(TESTLQ) RQNAME(HYD) XMITQ(XMITQ)
+     2 : DEFINE QREMOTE(TEST_RQ1) RNAME(TESTLQ) RQNAME(HYD) XMITQ(XMITQ)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE QREMOTE(TEST_RQ1) RNAME(TESTLQ) R
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE QREMOTE( q_name )
+   [ CLUSNL( namelist_name ) ]             [ CLUSTER( cluster_name ) ]
+   [ CLWLPRTY( integer ) ]                 [ CLWLRANK( integer ) ]
+   [ CUSTOM( string ) ]
+   [ DEFBIND( NOTFIXED | OPEN | GROUP ) ]  [ DEFPRESP( SYNC | ASYNC ) ]
+   [ DEFPRTY( integer ) ]                  [ DEFPSIST( YES | NO ) ]
+   [ DESCR( string ) ]                     [ LIKE( qremote_name ) ]
+   [ PUT( ENABLED | DISABLED ) ]           [ REPLACE | NOREPLACE ]
+   [ RNAME( string ) ]                     [ RQMNAME( string ) ]
+   [ SCOPE( QMGR | CELL ) ]                [ XMITQ( string ) ]
+
+DEFINE QREMOTE(TEST_RQ1) RNAME(TESTLQ) RQMNAME(HYD) XMITQ(XMITQ)
+     3 : DEFINE QREMOTE(TEST_RQ1) RNAME(TESTLQ) RQMNAME(HYD) XMITQ(XMITQ)
+AMQ8006I: IBM MQ queue created.
+DEFINE QL(XMITQ) USAGE(XMITQ)
+     4 : DEFINE QL(XMITQ) USAGE(XMITQ)
+AMQ8006I: IBM MQ queue created.
+DEFINE CHANNEL(BAN.HYD) CHLTYPE(SDR) CONAME(192.168.0.5(1415)) XMITQ(XMITQ)
+     5 : DEFINE CHANNEL(BAN.HYD) CHLTYPE(SDR) CONAME(192.168.0.5(1415)) XMITQ(XMITQ)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE CHANNEL(BAN.HYD) CHLTYPE(SDR) C
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE CHANNEL( channel_name )
+   CHLTYPE( SDR )
+   CONNAME( string )                       XMITQ( string )
+   [ BATCHHB( integer ) ]                  [ BATCHINT( integer ) ]
+   [ BATCHLIM( integer ) ]                 [ BATCHSZ( integer ) ]
+   [ CERTLABL( string ) ]                  [ COMPHDR( NONE | SYSTEM ) ]
+   [ COMPMSG( NONE | RLE | ZLIBFAST | ZLIBHIGH ) ]
+   [ CONVERT( YES | NO ) ]                 [ DESCR( string ) ]
+   [ DISCINT( integer ) ]                  [ HBINT( integer ) ]
+   [ KAINT( AUTO | integer ) ]
+   [ LOCLADDR( string ) ]                  [ LONGRTY( integer ) ]
+   [ LONGTMR( integer ) ]                  [ MAXMSGL( integer ) ]
+   [ MCANAME( string ) ]                   [ MCATYPE( PROCESS | THREAD ) ]
+   [ MCAUSER( string ) ]                   [ MODENAME( string ) ]
+   [ MONCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ MSGDATA( string ) ]                   [ MSGEXIT( string ) ]
+   [ NPMSPEED( NORMAL | FAST ) ]           [ PASSWORD( string ) ]
+   [ PROPCTL( COMPAT | NONE | ALL ) ]      [ RCVDATA( string ) ]
+   [ RCVEXIT( string ) ]                   [ REPLACE | NOREPLACE ]
+   [ SCYDATA( string ) ]                   [ SCYEXIT( string ) ]
+   [ SENDDATA( string ) ]                  [ SENDEXIT( string ) ]
+   [ SEQWRAP( integer ) ]                  [ SHORTRTY( integer ) ]
+   [ SHORTTMR( integer ) ]                 [ SSLCIPH( string ) ]
+   [ SSLPEER( string ) ]
+   [ STATCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ TPNAME( string ) ]                    [ TRPTYPE( LU62 | TCP ) ]
+   [ USEDLQ( YES | NO ) ]                  [ USERID( string ) ]
+
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5(1415)) TRPTYPE(TCP) XMITQ(HYD)
+     6 : DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5(1415)) TRPTYPE(TCP) XMITQ(HYD)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5(
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE CHANNEL( channel_name )
+   CHLTYPE( SDR )
+   CONNAME( string )                       XMITQ( string )
+   [ BATCHHB( integer ) ]                  [ BATCHINT( integer ) ]
+   [ BATCHLIM( integer ) ]                 [ BATCHSZ( integer ) ]
+   [ CERTLABL( string ) ]                  [ COMPHDR( NONE | SYSTEM ) ]
+   [ COMPMSG( NONE | RLE | ZLIBFAST | ZLIBHIGH ) ]
+   [ CONVERT( YES | NO ) ]                 [ DESCR( string ) ]
+   [ DISCINT( integer ) ]                  [ HBINT( integer ) ]
+   [ KAINT( AUTO | integer ) ]
+   [ LOCLADDR( string ) ]                  [ LONGRTY( integer ) ]
+   [ LONGTMR( integer ) ]                  [ MAXMSGL( integer ) ]
+   [ MCANAME( string ) ]                   [ MCATYPE( PROCESS | THREAD ) ]
+   [ MCAUSER( string ) ]                   [ MODENAME( string ) ]
+   [ MONCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ MSGDATA( string ) ]                   [ MSGEXIT( string ) ]
+   [ NPMSPEED( NORMAL | FAST ) ]           [ PASSWORD( string ) ]
+   [ PROPCTL( COMPAT | NONE | ALL ) ]      [ RCVDATA( string ) ]
+   [ RCVEXIT( string ) ]                   [ REPLACE | NOREPLACE ]
+   [ SCYDATA( string ) ]                   [ SCYEXIT( string ) ]
+   [ SENDDATA( string ) ]                  [ SENDEXIT( string ) ]
+   [ SEQWRAP( integer ) ]                  [ SHORTRTY( integer ) ]
+   [ SHORTTMR( integer ) ]                 [ SSLCIPH( string ) ]
+   [ SSLPEER( string ) ]
+   [ STATCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ TPNAME( string ) ]                    [ TRPTYPE( LU62 | TCP ) ]
+   [ USEDLQ( YES | NO ) ]                  [ USERID( string ) ]
+
+EFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5)) TRPTYPE(TCP) XMITQ(HYD)
+     7 : EFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5)) TRPTYPE(TCP) XMITQ(HYD)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+E
+
+AMQ8426I: Valid MQSC commands are:
+
+    ALTER
+    CLEAR
+    DEFINE
+    DELETE
+    DISPLAY
+    END
+    EXIT
+    PING
+    PURGE
+    QUIT
+    REFRESH
+    RESET
+    RESOLVE
+    RESUME
+    SET
+    START
+    STOP
+    SUSPEND
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5)) TRPTYPE(TCP) XMITQ(HYD)
+     8 : DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5)) TRPTYPE(TCP) XMITQ(HYD)
+AMQ8421E: A required keyword was not specified.
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE( SDR ) CONNAME(192.168.0.5))
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE CHANNEL( channel_name )
+   CHLTYPE( SDR )
+   CONNAME( string )                       XMITQ( string )
+   [ BATCHHB( integer ) ]                  [ BATCHINT( integer ) ]
+   [ BATCHLIM( integer ) ]                 [ BATCHSZ( integer ) ]
+   [ CERTLABL( string ) ]                  [ COMPHDR( NONE | SYSTEM ) ]
+   [ COMPMSG( NONE | RLE | ZLIBFAST | ZLIBHIGH ) ]
+   [ CONVERT( YES | NO ) ]                 [ DESCR( string ) ]
+   [ DISCINT( integer ) ]                  [ HBINT( integer ) ]
+   [ KAINT( AUTO | integer ) ]
+   [ LOCLADDR( string ) ]                  [ LONGRTY( integer ) ]
+   [ LONGTMR( integer ) ]                  [ MAXMSGL( integer ) ]
+   [ MCANAME( string ) ]                   [ MCATYPE( PROCESS | THREAD ) ]
+   [ MCAUSER( string ) ]                   [ MODENAME( string ) ]
+   [ MONCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ MSGDATA( string ) ]                   [ MSGEXIT( string ) ]
+   [ NPMSPEED( NORMAL | FAST ) ]           [ PASSWORD( string ) ]
+   [ PROPCTL( COMPAT | NONE | ALL ) ]      [ RCVDATA( string ) ]
+   [ RCVEXIT( string ) ]                   [ REPLACE | NOREPLACE ]
+   [ SCYDATA( string ) ]                   [ SCYEXIT( string ) ]
+   [ SENDDATA( string ) ]                  [ SENDEXIT( string ) ]
+   [ SEQWRAP( integer ) ]                  [ SHORTRTY( integer ) ]
+   [ SHORTTMR( integer ) ]                 [ SSLCIPH( string ) ]
+   [ SSLPEER( string ) ]
+   [ STATCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ TPNAME( string ) ]                    [ TRPTYPE( LU62 | TCP ) ]
+   [ USEDLQ( YES | NO ) ]                  [ USERID( string ) ]
+
+DEFINE CHANNEL --help
+     9 : DEFINE CHANNEL --help
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE CHANNEL -
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE CHANNEL( channel_name )
+   CHLTYPE( SDR | SVR | RCVR | RQSTR | CLNTCONN | SVRCONN |
+            CLUSSDR | CLUSRCVR | AMQP | MQTT* )
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE(SDR) --help
+    10 : DEFINE CHANNEL(BAN.HYD)  CHLTYPE(SDR) --help
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE(SDR) -
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE CHANNEL( channel_name )
+   CHLTYPE( SDR )
+   CONNAME( string )                       XMITQ( string )
+   [ BATCHHB( integer ) ]                  [ BATCHINT( integer ) ]
+   [ BATCHLIM( integer ) ]                 [ BATCHSZ( integer ) ]
+   [ CERTLABL( string ) ]                  [ COMPHDR( NONE | SYSTEM ) ]
+   [ COMPMSG( NONE | RLE | ZLIBFAST | ZLIBHIGH ) ]
+   [ CONVERT( YES | NO ) ]                 [ DESCR( string ) ]
+   [ DISCINT( integer ) ]                  [ HBINT( integer ) ]
+   [ KAINT( AUTO | integer ) ]
+   [ LOCLADDR( string ) ]                  [ LONGRTY( integer ) ]
+   [ LONGTMR( integer ) ]                  [ MAXMSGL( integer ) ]
+   [ MCANAME( string ) ]                   [ MCATYPE( PROCESS | THREAD ) ]
+   [ MCAUSER( string ) ]                   [ MODENAME( string ) ]
+   [ MONCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ MSGDATA( string ) ]                   [ MSGEXIT( string ) ]
+   [ NPMSPEED( NORMAL | FAST ) ]           [ PASSWORD( string ) ]
+   [ PROPCTL( COMPAT | NONE | ALL ) ]      [ RCVDATA( string ) ]
+   [ RCVEXIT( string ) ]                   [ REPLACE | NOREPLACE ]
+   [ SCYDATA( string ) ]                   [ SCYEXIT( string ) ]
+   [ SENDDATA( string ) ]                  [ SENDEXIT( string ) ]
+   [ SEQWRAP( integer ) ]                  [ SHORTRTY( integer ) ]
+   [ SHORTTMR( integer ) ]                 [ SSLCIPH( string ) ]
+   [ SSLPEER( string ) ]
+   [ STATCHL( QMGR | OFF | LOW | MEDIUM | HIGH ) ]
+   [ TPNAME( string ) ]                    [ TRPTYPE( LU62 | TCP ) ]
+   [ USEDLQ( YES | NO ) ]                  [ USERID( string ) ]
+
+DEFINE CHANNEL(BAN.HYD)  CHLTYPE(SDR) CONNAME(192.168.0.5)10 MQSC commands read.
+8 commands have a syntax error.
+All valid MQSC commands were processed.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(ban)                                               STATUS(Running)
+-bash-4.2$ stopmqm ban
+-bash: stopmqm: command not found
+-bash-4.2$
+-bash-4.2$ endmqm ban
+Quiesce request accepted. The queue manager will stop when all outstanding work
+is complete.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dsmq
+-bash: dsmq: command not found
+-bash-4.2$ dspmq
+QMNAME(ban)                                               STATUS(Ended normally)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dltmqm ban
+IBM MQ queue manager 'ban' deleted.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ rpm -qa | grep -i mqm
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ ls -ltr
+total 16
+drwxrwsr-x. 3 mqm mqm   19 Jul  3 03:50 conv
+drwxrwsr-x. 2 mqm mqm    6 Jul  3 03:50 config
+drwxrwsrwx. 2 mqm mqm    6 Jul  3 03:50 trace
+drwxrwsr-x. 3 mqm mqm   27 Jul  3 03:50 web
+-rw-rw-r--. 1 mqm mqm 1941 Jul  3 03:50 service.env
+drwxrwsr-x. 5 mqm mqm   53 Jul  3 03:50 mqft
+drwxrwsr-x. 4 mqm mqm   32 Jul  3 03:50 shared
+-rw-rw-r--. 1 mqm mqm  661 Jul  3 03:50 mqclient.ini
+drwxrwsr-x. 3 mqm mqm   27 Jul  3 03:50 exits64
+drwxrwsr-x. 3 mqm mqm   27 Jul  3 03:50 exits
+drwxrwsrwx. 2 mqm mqm 4096 Jul  3 21:42 errors
+drwxrwsr-x. 2 mqm mqm    6 Jul  5 00:27 log
+drwxrwsr-x. 3 mqm mqm   21 Jul  5 00:27 sockets
+drwxrwsr-x. 3 mqm mqm   21 Jul  5 00:27 qmgrs
+-rw-rw-r--. 1 mqm mqm 2474 Jul  5 00:27 mqs.ini
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ cd
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ exit
+logout
+[root@localhost ~]# ls -ltr
+total 28
+-rw-------. 1 root root 1876 Jun 19  2021 original-ks.cfg
+-rw-------. 1 root root 2762 Jun 19  2021 anaconda-ks.cfg
+-rw-r--r--. 1 root root   36 Jul  3 02:41 filename
+-rw-r--r--. 1 root root  584 Jul  3 03:04 mahesh
+-rw-r--r--. 1 root root    0 Jul  3 03:15 cpname
+-rw-r--r--. 1 root root    0 Jul  3 03:18 waste
+-rw-------. 1 root root 1876 Jul  3 03:19 bkp-original-ks.cfg
+drwxr-xr-x. 2 root root 4096 Jul  3 03:20 config-mq_03JULY2020
+drwxr-xr-x. 2 root root 4096 Jul  3 03:32 repodata
+[root@localhost ~]# cd /tmp
+[root@localhost tmp]# ls
+hsperfdata_root                         systemd-private-08e6ae6f955e4ffd9d0771d80e8a666d-chronyd.service-C0XrKU
+IBM_MQ_9.2.0_LINUX_X86-64_TRIAL.tar.gz  systemd-private-2fe062698867475893899812f8b11e67-chronyd.service-Na6Hfb
+mqconfig.2902.log                       vmware-root
+MQServer                                yum_save_tx.2022-07-03.02-42.bvN9Cq.yumtx
+[root@localhost tmp]#
+[root@localhost tmp]#
+[root@localhost tmp]# rpm -qa |grep MQ*
+[root@localhost tmp]# rpm -qa |grep MQS
+MQSeriesRuntime-9.2.0-0.x86_64
+MQSeriesGSKit-9.2.0-0.x86_64
+MQSeriesAMQP-9.2.0-0.x86_64
+MQSeriesXRService-9.2.0-0.x86_64
+MQSeriesSFBridge-9.2.0-0.x86_64
+MQSeriesMsg_de-9.2.0-0.x86_64
+MQSeriesMsg_it-9.2.0-0.x86_64
+MQSeriesMsg_pt-9.2.0-0.x86_64
+MQSeriesSamples-9.2.0-0.x86_64
+MQSeriesJRE-9.2.0-0.x86_64
+MQSeriesFTBase-9.2.0-0.x86_64
+MQSeriesServer-9.2.0-0.x86_64
+MQSeriesFTService-9.2.0-0.x86_64
+MQSeriesAMS-9.2.0-0.x86_64
+MQSeriesWeb-9.2.0-0.x86_64
+MQSeriesClient-9.2.0-0.x86_64
+MQSeriesBCBridge-9.2.0-0.x86_64
+MQSeriesExplorer-9.2.0-0.x86_64
+MQSeriesMsg_cs-9.2.0-0.x86_64
+MQSeriesMsg_es-9.2.0-0.x86_64
+MQSeriesMsg_hu-9.2.0-0.x86_64
+MQSeriesMsg_ja-9.2.0-0.x86_64
+MQSeriesMsg_pl-9.2.0-0.x86_64
+MQSeriesMsg_ru-9.2.0-0.x86_64
+MQSeriesMsg_Zh_TW-9.2.0-0.x86_64
+MQSeriesSDK-9.2.0-0.x86_64
+MQSeriesJava-9.2.0-0.x86_64
+MQSeriesFTAgent-9.2.0-0.x86_64
+MQSeriesFTLogger-9.2.0-0.x86_64
+MQSeriesFTTools-9.2.0-0.x86_64
+MQSeriesMan-9.2.0-0.x86_64
+MQSeriesMsg_fr-9.2.0-0.x86_64
+MQSeriesMsg_ko-9.2.0-0.x86_64
+MQSeriesMsg_Zh_CN-9.2.0-0.x86_64
+[root@localhost tmp]# rpm -qa |grep MQ*^C
+[root@localhost tmp]# rpm -ev "rpm -qa |grep MQS*"
+error: package rpm -qa |grep MQS* is not installed
+[root@localhost tmp]# rpm -ev "rpm -qa |grep MQS"
+error: package rpm -qa |grep MQS is not installed
+[root@localhost tmp]#
+[root@localhost tmp]#
+[root@localhost tmp]# rpm -qa |grep MQ
+MQSeriesRuntime-9.2.0-0.x86_64
+MQSeriesGSKit-9.2.0-0.x86_64
+MQSeriesAMQP-9.2.0-0.x86_64
+MQSeriesXRService-9.2.0-0.x86_64
+MQSeriesSFBridge-9.2.0-0.x86_64
+MQSeriesMsg_de-9.2.0-0.x86_64
+MQSeriesMsg_it-9.2.0-0.x86_64
+MQSeriesMsg_pt-9.2.0-0.x86_64
+MQSeriesSamples-9.2.0-0.x86_64
+MQSeriesJRE-9.2.0-0.x86_64
+MQSeriesFTBase-9.2.0-0.x86_64
+MQSeriesServer-9.2.0-0.x86_64
+MQSeriesFTService-9.2.0-0.x86_64
+MQSeriesAMS-9.2.0-0.x86_64
+MQSeriesWeb-9.2.0-0.x86_64
+MQSeriesClient-9.2.0-0.x86_64
+MQSeriesBCBridge-9.2.0-0.x86_64
+MQSeriesExplorer-9.2.0-0.x86_64
+MQSeriesMsg_cs-9.2.0-0.x86_64
+MQSeriesMsg_es-9.2.0-0.x86_64
+MQSeriesMsg_hu-9.2.0-0.x86_64
+MQSeriesMsg_ja-9.2.0-0.x86_64
+MQSeriesMsg_pl-9.2.0-0.x86_64
+MQSeriesMsg_ru-9.2.0-0.x86_64
+MQSeriesMsg_Zh_TW-9.2.0-0.x86_64
+MQSeriesSDK-9.2.0-0.x86_64
+MQSeriesJava-9.2.0-0.x86_64
+MQSeriesFTAgent-9.2.0-0.x86_64
+MQSeriesFTLogger-9.2.0-0.x86_64
+MQSeriesFTTools-9.2.0-0.x86_64
+MQSeriesMan-9.2.0-0.x86_64
+MQSeriesMsg_fr-9.2.0-0.x86_64
+MQSeriesMsg_ko-9.2.0-0.x86_64
+MQSeriesMsg_Zh_CN-9.2.0-0.x86_64
+[root@localhost tmp]# rpm -qa |grep MQ | xargs rpm -ev
+Preparing packages...
+MQSeriesFTService-9.2.0-0.x86_64
+MQSeriesFTLogger-9.2.0-0.x86_64
+MQSeriesFTAgent-9.2.0-0.x86_64
+MQSeriesFTTools-9.2.0-0.x86_64
+MQSeriesWeb-9.2.0-0.x86_64
+MQSeriesXRService-9.2.0-0.x86_64
+MQSeriesAMQP-9.2.0-0.x86_64
+MQSeriesFTBase-9.2.0-0.x86_64
+MQSeriesBCBridge-9.2.0-0.x86_64
+MQSeriesSFBridge-9.2.0-0.x86_64
+MQSeriesExplorer-9.2.0-0.x86_64
+MQSeriesClient-9.2.0-0.x86_64
+MQSeriesJRE-9.2.0-0.x86_64
+MQSeriesJava-9.2.0-0.x86_64
+MQSeriesMsg_Zh_CN-9.2.0-0.x86_64
+MQSeriesMsg_ko-9.2.0-0.x86_64
+MQSeriesMsg_fr-9.2.0-0.x86_64
+MQSeriesMan-9.2.0-0.x86_64
+MQSeriesSDK-9.2.0-0.x86_64
+MQSeriesMsg_Zh_TW-9.2.0-0.x86_64
+MQSeriesMsg_ru-9.2.0-0.x86_64
+MQSeriesMsg_pl-9.2.0-0.x86_64
+MQSeriesMsg_ja-9.2.0-0.x86_64
+MQSeriesMsg_hu-9.2.0-0.x86_64
+MQSeriesMsg_es-9.2.0-0.x86_64
+MQSeriesMsg_cs-9.2.0-0.x86_64
+MQSeriesAMS-9.2.0-0.x86_64
+MQSeriesServer-9.2.0-0.x86_64
+MQSeriesGSKit-9.2.0-0.x86_64
+MQSeriesSamples-9.2.0-0.x86_64
+MQSeriesMsg_pt-9.2.0-0.x86_64
+MQSeriesMsg_it-9.2.0-0.x86_64
+MQSeriesMsg_de-9.2.0-0.x86_64
+MQSeriesRuntime-9.2.0-0.x86_64
+[root@localhost tmp]# ls -lrt
+total 869364
+drwxrwxr-x. 8 bin  bin       4096 Jul 10  2020 MQServer
+drwx------. 2 root root         6 Jun 19  2021 vmware-root
+drwxr-xr-x. 2 root root         6 Jun 19  2021 hsperfdata_root
+-rw-r--r--. 1 root root 890200771 Jul  3 02:36 IBM_MQ_9.2.0_LINUX_X86-64_TRIAL.tar.gz
+-rw-------. 1 root root     14080 Jul  3 02:42 yum_save_tx.2022-07-03.02-42.bvN9Cq.yumtx
+-rw-r--r--. 1 root root      2367 Jul  3 03:51 mqconfig.2902.log
+drwx------. 3 root root        17 Jul  4 00:43 systemd-private-08e6ae6f955e4ffd9d0771d80e8a666d-chronyd.service-C0XrKU
+drwx------. 3 root root        17 Jul  5 00:07 systemd-private-2fe062698867475893899812f8b11e67-chronyd.service-Na6Hfb
+[root@localhost tmp]# du -sh IBM*
+849M    IBM_MQ_9.2.0_LINUX_X86-64_TRIAL.tar.gz
+[root@localhost tmp]# du -sh MQServer
+930M    MQServer
+[root@localhost tmp]# cd MQServer/
+[root@localhost MQServer]# ls -ltr
+total 723268
+-rw-rw-r--. 1 bin bin    306096 Jul 10  2020 MQSeriesSDK-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2176427 Jul 10  2020 MQSeriesSamples-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   5661957 Jul 10  2020 MQSeriesClient-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  29198029 Jul 10  2020 MQSeriesBCBridge-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  42504419 Jul 10  2020 MQSeriesJava-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  24962758 Jul 10  2020 MQSeriesGSKit-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   1379153 Jul 10  2020 MQSeriesSFBridge-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    278541 Jul 10  2020 MQSeriesMan-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    209951 Jul 10  2020 MQSeriesMsg_de-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    195735 Jul 10  2020 MQSeriesMsg_es-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    198457 Jul 10  2020 MQSeriesMsg_fr-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    197231 Jul 10  2020 MQSeriesMsg_it-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    179059 Jul 10  2020 MQSeriesMsg_ko-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    189795 Jul 10  2020 MQSeriesMsg_ja-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    196997 Jul 10  2020 MQSeriesMsg_pt-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    194680 Jul 10  2020 MQSeriesMsg_ru-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    203353 Jul 10  2020 MQSeriesMsg_hu-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    201254 Jul 10  2020 MQSeriesMsg_cs-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    176101 Jul 10  2020 MQSeriesMsg_Zh_CN-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    202970 Jul 10  2020 MQSeriesMsg_pl-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    177456 Jul 10  2020 MQSeriesMsg_Zh_TW-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2362114 Jul 10  2020 MQSeriesAMQP-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  25745893 Jul 10  2020 MQSeriesFTBase-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     32143 Jul 10  2020 MQSeriesFTTools-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2766214 Jul 10  2020 MQSeriesFTAgent-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   3707581 Jul 10  2020 MQSeriesFTLogger-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  12374428 Jul 10  2020 MQSeriesServer-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 129518985 Jul 10  2020 MQSeriesJRE-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     31782 Jul 10  2020 MQSeriesFTService-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     24915 Jul 10  2020 MQSeriesAMS-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2053399 Jul 10  2020 MQSeriesXRService-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  14683643 Jul 10  2020 MQSeriesRuntime-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 212095858 Jul 10  2020 MQSeriesWeb-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 226114478 Jul 10  2020 MQSeriesExplorer-9.2.0-0.x86_64.rpm
+drwxrwxr-x. 3 bin bin        18 Jul 10  2020 Advanced
+drwxrwxr-x. 4 bin bin        51 Jul 10  2020 lap
+-rw-rw-r--. 1 bin bin      1084 Jul 10  2020 IBM-MQ.repo
+-rwxrwxr-x. 1 bin bin      7892 Jul 10  2020 crtmqpkg
+-rw-rw-r--. 1 bin bin       223 Jul 10  2020 copyright
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 repackage
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 READMES
+-rwxr-xr-x. 1 bin bin     13442 Jul 10  2020 mqlicense.sh
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 licenses
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 repodata
+[root@localhost MQServer]# ls -ltr
+total 723268
+-rw-rw-r--. 1 bin bin    306096 Jul 10  2020 MQSeriesSDK-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2176427 Jul 10  2020 MQSeriesSamples-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   5661957 Jul 10  2020 MQSeriesClient-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  29198029 Jul 10  2020 MQSeriesBCBridge-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  42504419 Jul 10  2020 MQSeriesJava-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  24962758 Jul 10  2020 MQSeriesGSKit-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   1379153 Jul 10  2020 MQSeriesSFBridge-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    278541 Jul 10  2020 MQSeriesMan-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    209951 Jul 10  2020 MQSeriesMsg_de-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    195735 Jul 10  2020 MQSeriesMsg_es-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    198457 Jul 10  2020 MQSeriesMsg_fr-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    197231 Jul 10  2020 MQSeriesMsg_it-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    179059 Jul 10  2020 MQSeriesMsg_ko-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    189795 Jul 10  2020 MQSeriesMsg_ja-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    196997 Jul 10  2020 MQSeriesMsg_pt-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    194680 Jul 10  2020 MQSeriesMsg_ru-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    203353 Jul 10  2020 MQSeriesMsg_hu-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    201254 Jul 10  2020 MQSeriesMsg_cs-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    176101 Jul 10  2020 MQSeriesMsg_Zh_CN-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    202970 Jul 10  2020 MQSeriesMsg_pl-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin    177456 Jul 10  2020 MQSeriesMsg_Zh_TW-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2362114 Jul 10  2020 MQSeriesAMQP-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  25745893 Jul 10  2020 MQSeriesFTBase-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     32143 Jul 10  2020 MQSeriesFTTools-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2766214 Jul 10  2020 MQSeriesFTAgent-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   3707581 Jul 10  2020 MQSeriesFTLogger-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  12374428 Jul 10  2020 MQSeriesServer-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 129518985 Jul 10  2020 MQSeriesJRE-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     31782 Jul 10  2020 MQSeriesFTService-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin     24915 Jul 10  2020 MQSeriesAMS-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin   2053399 Jul 10  2020 MQSeriesXRService-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin  14683643 Jul 10  2020 MQSeriesRuntime-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 212095858 Jul 10  2020 MQSeriesWeb-9.2.0-0.x86_64.rpm
+-rw-rw-r--. 1 bin bin 226114478 Jul 10  2020 MQSeriesExplorer-9.2.0-0.x86_64.rpm
+drwxrwxr-x. 3 bin bin        18 Jul 10  2020 Advanced
+drwxrwxr-x. 4 bin bin        51 Jul 10  2020 lap
+-rw-rw-r--. 1 bin bin      1084 Jul 10  2020 IBM-MQ.repo
+-rwxrwxr-x. 1 bin bin      7892 Jul 10  2020 crtmqpkg
+-rw-rw-r--. 1 bin bin       223 Jul 10  2020 copyright
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 repackage
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 READMES
+-rwxr-xr-x. 1 bin bin     13442 Jul 10  2020 mqlicense.sh
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 licenses
+drwxrwxr-x. 2 bin bin      4096 Jul 10  2020 repodata
+[root@localhost MQServer]# ./mqlicense.sh -accept
+
+Licensed Materials - Property of IBM
+
+ 5724-H72
+
+ (C) Copyright IBM Corporation 1993, 2020
+
+US Government Users Restricted Rights - Use, duplication or disclosure
+restricted by GSA ADP Schedule Contract with IBM Corp.
+
+
+
+
+
+Agreement accepted:  Proceed with install.
+
+[root@localhost MQServer]# rpm -ivh MQSe*
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:MQSeriesRuntime-9.2.0-0          ################################# [  3%]
+   2:MQSeriesJRE-9.2.0-0              ################################# [  6%]
+   3:MQSeriesJava-9.2.0-0             ################################# [  9%]
+   4:MQSeriesFTBase-9.2.0-0           ################################# [ 12%]
+   5:MQSeriesGSKit-9.2.0-0            ################################# [ 15%]
+   6:MQSeriesServer-9.2.0-0           ################################# [ 18%]
+
+WARNING: System settings for this system do not meet recommendations for this product
+         See the log file at "/tmp/mqconfig.4043.log" for more information
+
+   7:MQSeriesFTAgent-9.2.0-0          ################################# [ 21%]
+   8:MQSeriesFTService-9.2.0-0        ################################# [ 24%]
+   9:MQSeriesAMQP-9.2.0-0             ################################# [ 26%]
+  10:MQSeriesAMS-9.2.0-0              ################################# [ 29%]
+  11:MQSeriesFTLogger-9.2.0-0         ################################# [ 32%]
+  12:MQSeriesWeb-9.2.0-0              ################################# [ 35%]
+  13:MQSeriesXRService-9.2.0-0        ################################# [ 38%]
+  14:MQSeriesClient-9.2.0-0           ################################# [ 41%]
+  15:MQSeriesFTTools-9.2.0-0          ################################# [ 44%]
+  16:MQSeriesBCBridge-9.2.0-0         ################################# [ 47%]
+  17:MQSeriesSFBridge-9.2.0-0         ################################# [ 50%]
+  18:MQSeriesExplorer-9.2.0-0         ################################# [ 53%]
+  19:MQSeriesMan-9.2.0-0              ################################# [ 56%]
+  20:MQSeriesMsg_cs-9.2.0-0           ################################# [ 59%]
+  21:MQSeriesMsg_de-9.2.0-0           ################################# [ 62%]
+  22:MQSeriesMsg_es-9.2.0-0           ################################# [ 65%]
+  23:MQSeriesMsg_fr-9.2.0-0           ################################# [ 68%]
+  24:MQSeriesMsg_hu-9.2.0-0           ################################# [ 71%]
+  25:MQSeriesMsg_it-9.2.0-0           ################################# [ 74%]
+  26:MQSeriesMsg_ja-9.2.0-0           ################################# [ 76%]
+  27:MQSeriesMsg_ko-9.2.0-0           ################################# [ 79%]
+  28:MQSeriesMsg_pl-9.2.0-0           ################################# [ 82%]
+  29:MQSeriesMsg_pt-9.2.0-0           ################################# [ 85%]
+  30:MQSeriesMsg_ru-9.2.0-0           ################################# [ 88%]
+  31:MQSeriesMsg_Zh_CN-9.2.0-0        ################################# [ 91%]
+  32:MQSeriesMsg_Zh_TW-9.2.0-0        ################################# [ 94%]
+  33:MQSeriesSamples-9.2.0-0          ################################# [ 97%]
+  34:MQSeriesSDK-9.2.0-0              ################################# [100%]
+[root@localhost MQServer]#
+[root@localhost MQServer]# rpm -qa | grep -i MQ
+MQSeriesJRE-9.2.0-0.x86_64
+MQSeriesServer-9.2.0-0.x86_64
+MQSeriesAMS-9.2.0-0.x86_64
+MQSeriesClient-9.2.0-0.x86_64
+MQSeriesExplorer-9.2.0-0.x86_64
+MQSeriesMsg_es-9.2.0-0.x86_64
+MQSeriesMsg_ja-9.2.0-0.x86_64
+MQSeriesMsg_ru-9.2.0-0.x86_64
+MQSeriesSDK-9.2.0-0.x86_64
+MQSeriesRuntime-9.2.0-0.x86_64
+MQSeriesJava-9.2.0-0.x86_64
+MQSeriesGSKit-9.2.0-0.x86_64
+MQSeriesFTAgent-9.2.0-0.x86_64
+MQSeriesAMQP-9.2.0-0.x86_64
+MQSeriesFTLogger-9.2.0-0.x86_64
+MQSeriesXRService-9.2.0-0.x86_64
+MQSeriesFTTools-9.2.0-0.x86_64
+MQSeriesSFBridge-9.2.0-0.x86_64
+MQSeriesMan-9.2.0-0.x86_64
+MQSeriesMsg_de-9.2.0-0.x86_64
+MQSeriesMsg_fr-9.2.0-0.x86_64
+MQSeriesMsg_it-9.2.0-0.x86_64
+MQSeriesMsg_ko-9.2.0-0.x86_64
+MQSeriesMsg_pt-9.2.0-0.x86_64
+MQSeriesMsg_Zh_CN-9.2.0-0.x86_64
+MQSeriesSamples-9.2.0-0.x86_64
+confluent-kafka-mqtt-6.2.0-1.noarch
+MQSeriesFTBase-9.2.0-0.x86_64
+MQSeriesFTService-9.2.0-0.x86_64
+MQSeriesWeb-9.2.0-0.x86_64
+MQSeriesBCBridge-9.2.0-0.x86_64
+MQSeriesMsg_cs-9.2.0-0.x86_64
+MQSeriesMsg_hu-9.2.0-0.x86_64
+MQSeriesMsg_pl-9.2.0-0.x86_64
+MQSeriesMsg_Zh_TW-9.2.0-0.x86_64
+[root@localhost MQServer]#
+[root@localhost MQServer]#
+[root@localhost MQServer]#
+[root@localhost MQServer]# id mqm
+uid=987(mqm) gid=1002(mqm) groups=1002(mqm)
+[root@localhost MQServer]#
+[root@localhost MQServer]#
+[root@localhost MQServer]# cd /opt/mqm
+[root@localhost mqm]#
+[root@localhost mqm]#
+[root@localhost mqm]#
+[root@localhost mqm]# cd bin
+[root@localhost bin]# ls -ltr
+total 6172
+-r-xr-xr-x. 1 mqm  mqm  23864 Jul 10  2020 strmqtrc
+-r-sr-s---. 1 mqm  mqm  10784 Jul 10  2020 strmqm
+-r-xr-xr-x. 1 mqm  mqm   1494 Jul 10  2020 strmqikm
+-r-sr-s---. 1 mqm  mqm  10856 Jul 10  2020 strmqcsv
+-r-xr-xr-x. 1 mqm  mqm   3311 Jul 10  2020 strmqcfg
+-r-sr-s---. 1 mqm  mqm  19176 Jul 10  2020 setmqxacred
+-r-sr-s---. 1 mqm  mqm  18880 Jul 10  2020 setmqspl
+-r-xr-x---. 1 mqm  mqm  15048 Jul 10  2020 setmqprd
+-r-sr-s---. 1 mqm  mqm  19296 Jul 10  2020 setmqm
+-r-xr-xr-x. 1 mqm  mqm 109672 Jul 10  2020 setmqinst
+-r-xr-xr-x. 1 mqm  mqm   5706 Jul 10  2020 setmqenv
+-r-sr-s---. 1 mqm  mqm  24432 Jul 10  2020 setmqaut
+-r-sr-s---. 1 mqm  mqm  27600 Jul 10  2020 runswchl
+-r-xr-x---. 1 mqm  mqm  27592 Jul 10  2020 runmqtrm
+-r-xr-xr-x. 1 mqm  mqm  27592 Jul 10  2020 runmqtmc
+-r-xr-xr-x. 1 mqm  mqm   3999 Jul 10  2020 runmqsfb
+-r-xr-xr-x. 1 mqm  mqm  15136 Jul 10  2020 runmqsc
+-r-xr-xr-x. 1 mqm  mqm   3743 Jul 10  2020 runmqras
+-r-sr-s---. 1 mqm  mqm  36040 Jul 10  2020 runmqlsr
+-r-sr-s---. 1 mqm  mqm  85264 Jul 10  2020 runmqdlq
+-r-xr-xr-x. 1 mqm  mqm   2451 Jul 10  2020 runmqckm
+-r-sr-s---. 1 mqm  mqm  10888 Jul 10  2020 runmqchl
+-r-sr-s---. 1 mqm  mqm  40072 Jul 10  2020 runmqchi
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 runmqbrk
+-r-xr-xr-x. 1 mqm  mqm   4102 Jul 10  2020 runmqbcb
+-r-xr-xr-x. 1 mqm  mqm   2100 Jul 10  2020 runmqakm
+-r-sr-s---. 1 mqm  mqm  15048 Jul 10  2020 rsvmqtrn
+-r-sr-s---. 1 mqm  mqm  19272 Jul 10  2020 rmvmqinf
+-r-sr-s---. 1 mqm  mqm  31688 Jul 10  2020 rcrmqobj
+-r-sr-s---. 1 mqm  mqm  23304 Jul 10  2020 rcdmqimg
+-r-xr-xr-x. 1 mqm  mqm 261168 Jul 10  2020 mqrc
+-r-xr-x---. 1 mqm  mqm 334768 Jul 10  2020 mqlicense
+-r-xr-xr-x. 1 mqm  mqm  61176 Jul 10  2020 MQExplorer
+-r-xr-xr-x. 1 mqm  mqm  50943 Jul 10  2020 mqconfig
+-r-xr-xr-x. 1 mqm  mqm 130312 Jul 10  2020 mqcertck
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 migmqlog
+-r--r--r--. 1 bin  mqm 113169 Jul 10  2020 isa.xml
+-r-xr-xr-x. 1 mqm  mqm   6672 Jul 10  2020 ftetag
+-r-xr-xr-x. 1 mqm  mqm   1135 Jul 10  2020 fteStopLogger
+-r-xr-xr-x. 1 mqm  mqm   1135 Jul 10  2020 fteStopAgent
+-r-xr-xr-x. 1 mqm  mqm   2475 Jul 10  2020 fteStartLogger
+-r-xr-xr-x. 1 mqm  mqm   1787 Jul 10  2020 fteStartAgent
+-r-xr-xr-x. 1 mqm  mqm   1150 Jul 10  2020 fteShowLoggerDetails
+-r-xr-xr-x. 1 mqm  mqm   1148 Jul 10  2020 fteShowAgentDetails
+-r-xr-xr-x. 1 mqm  mqm   1149 Jul 10  2020 fteSetupCoordination
+-r-xr-xr-x. 1 mqm  mqm   1141 Jul 10  2020 fteSetupCommands
+-r-xr-xr-x. 1 mqm  mqm   1145 Jul 10  2020 fteSetLoggerTraceLevel
+-r-xr-xr-x. 1 mqm  mqm   1143 Jul 10  2020 fteSetAgentTraceLevel
+-r-xr-xr-x. 1 mqm  mqm   1167 Jul 10  2020 fteSetAgentLogLevel
+-r-xr-xr-x. 1 mqm  mqm   1123 Jul 10  2020 fteRAS
+-r-xr-xr-x. 1 mqm  mqm   5816 Jul 10  2020 ftePlatform
+-r-xr-xr-x. 1 mqm  mqm   1133 Jul 10  2020 ftePingAgent
+-r-xr-xr-x. 1 mqm  mqm   1034 Jul 10  2020 fteObfuscate
+-r-xr-xr-x. 1 mqm  mqm   1159 Jul 10  2020 fteMigrateLogger
+-r-xr-xr-x. 1 mqm  mqm   1174 Jul 10  2020 fteMigrateConfigurationOptions
+-r-xr-xr-x. 1 mqm  mqm   1157 Jul 10  2020 fteMigrateAgent
+-r-xr-xr-x. 1 mqm  mqm   1144 Jul 10  2020 fteListTemplates
+-r-xr-xr-x. 1 mqm  mqm   1160 Jul 10  2020 fteListScheduledTransfers
+-r-xr-xr-x. 1 mqm  mqm   1139 Jul 10  2020 fteListMonitors
+-r-xr-xr-x. 1 mqm  mqm   1137 Jul 10  2020 fteListAgents
+-r-xr-xr-x. 1 mqm  mqm   1145 Jul 10  2020 fteDisplayVersion
+-r-xr-xr-x. 1 mqm  mqm   1148 Jul 10  2020 fteDeleteTemplates
+-r-xr-xr-x. 1 mqm  mqm   1163 Jul 10  2020 fteDeleteScheduledTransfer
+-r-xr-xr-x. 1 mqm  mqm   1150 Jul 10  2020 fteDeleteMonitor
+-r-xr-xr-x. 1 mqm  mqm   1242 Jul 10  2020 fteDeleteLogger
+-r-xr-xr-x. 1 mqm  mqm   1138 Jul 10  2020 fteDeleteAgent
+-r-xr-xr-x. 1 mqm  mqm   1134 Jul 10  2020 fteDelete
+-r-xr-xr-x. 1 mqm  mqm   1134 Jul 10  2020 fteDefine
+-r-xr-xr-x. 1 mqm  mqm  27344 Jul 10  2020 ftecxfer
+-r-xr-xr-x. 1 mqm  mqm   1146 Jul 10  2020 fteCreateTransfer
+-r-xr-xr-x. 1 mqm  mqm   1146 Jul 10  2020 fteCreateTemplate
+-r-xr-xr-x. 1 mqm  mqm   1150 Jul 10  2020 fteCreateMonitor
+-r-xr-xr-x. 1 mqm  mqm   1242 Jul 10  2020 fteCreateLogger
+-r-xr-xr-x. 1 mqm  mqm   1161 Jul 10  2020 fteCreateCDAgent
+-r-xr-xr-x. 1 mqm  mqm   1152 Jul 10  2020 fteCreateBridgeAgent
+-r-xr-xr-x. 1 mqm  mqm   1138 Jul 10  2020 fteCreateAgent
+-r-xr-xr-x. 1 mqm  mqm   1935 Jul 10  2020 fteCommon
+-r-xr-xr-x. 1 mqm  mqm   1251 Jul 10  2020 fteClearMonitorHistory
+-r-xr-xr-x. 1 mqm  mqm   1137 Jul 10  2020 fteCleanAgent
+-r-xr-xr-x. 1 mqm  mqm   1172 Jul 10  2020 fteChangeDefaultConfigurationOptions
+-r-xr-xr-x. 1 mqm  mqm   1143 Jul 10  2020 fteCancelTransfer
+-r-xr-xr-x. 1 mqm  mqm  23248 Jul 10  2020 ftebxfer
+-r-xr-xr-x. 1 mqm  mqm   1158 Jul 10  2020 fteBundleConfiguration
+-r-xr-xr-x. 1 mqm  mqm   1366 Jul 10  2020 fteAnt
+-r-xr-x---. 1 mqm  mqm  23368 Jul 10  2020 ffstsummary
+-r-xr-xr-x. 1 mqm  mqm  23832 Jul 10  2020 endmqtrc
+-r-xr-x---. 1 mqm  mqm  27368 Jul 10  2020 endmqsde
+-r-sr-s---. 1 mqm  mqm  27680 Jul 10  2020 endmqm
+-r-sr-s---. 1 mqm  mqm  19176 Jul 10  2020 endmqlsr
+-r-sr-s---. 1 mqm  mqm  15048 Jul 10  2020 endmqcsv
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 endmqbrk
+-r-xr-xr-x. 1 mqm  mqm 105608 Jul 10  2020 dspmqver
+-r-sr-s---. 1 mqm  mqm  23304 Jul 10  2020 dspmqtrn
+-r-xr-xr-x. 1 mqm  mqm  77592 Jul 10  2020 dspmqtrc
+-r-sr-s---. 1 mqm  mqm  27144 Jul 10  2020 dspmqspl
+-r-xr-xr-x. 1 mqm  mqm 496208 Jul 10  2020 dspmqrte
+-r-sr-s---. 1 mqm  mqm  15016 Jul 10  2020 dspmqras
+-r-xr-xr-x. 1 mqm  mqm  10824 Jul 10  2020 dspmqlic
+-r-xr-xr-x. 1 mqm  mqm  80936 Jul 10  2020 dspmqinst
+-r-sr-s---. 1 mqm  mqm  19144 Jul 10  2020 dspmqinf
+-r-sr-s---. 1 mqm  mqm  19208 Jul 10  2020 dspmqfls
+-r-sr-s---. 1 mqm  mqm  10888 Jul 10  2020 dspmqcsv
+-r-sr-s---. 1 mqm  mqm  15808 Jul 10  2020 dspmqaut
+-r-xr-xr-x. 1 mqm  mqm 314640 Jul 10  2020 dspmq
+-r-xr-xr-x. 1 mqm  mqm 256200 Jul 10  2020 dmpmqmsg
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 dmpmqlog
+-r-xr-xr-x. 1 mqm  mqm 981872 Jul 10  2020 dmpmqcfg
+-r-sr-s---. 1 mqm  mqm  19936 Jul 10  2020 dmpmqaut
+-r-sr-s---. 1 mqm  mqm  23616 Jul 10  2020 dltmqm
+-r-xr-xr-x. 1 mqm  mqm  85000 Jul 10  2020 dltmqinst
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 dltmqbrk
+-r-sr-s---. 1 mqm  mqm  44640 Jul 10  2020 crtmqm
+-r-xr-xr-x. 1 mqm  mqm  85000 Jul 10  2020 crtmqinst
+-r-xr-xr-x. 1 mqm  mqm  27512 Jul 10  2020 crtmqenv
+-r-xr-x---. 1 mqm  mqm  67096 Jul 10  2020 crtmqdir
+-r-xr-xr-x. 1 mqm  mqm  35560 Jul 10  2020 crtmqcvx
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqzxma0
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqzmur0
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqzmuf0
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqzmuc0
+-r-sr-s---. 1 mqm  mqm  72872 Jul 10  2020 amqzmgr0
+-r-sr-s---. 1 mqm  mqm  19240 Jul 10  2020 amqzlwa0
+-r-sr-s---. 1 mqm  mqm  10856 Jul 10  2020 amqzlsa0
+-r-sr-s---. 1 mqm  mqm  40168 Jul 10  2020 amqzlaa0
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqzfuma
+-r-sr-sr-x. 1 mqm  mqm  15080 Jul 10  2020 amqxmsg0
+-r-xr-xr-x. 1 mqm  mqm  10880 Jul 10  2020 amqxdbg
+-r-xr-xr-x. 1 mqm  mqm   2358 Jul 10  2020 amqwlpver
+-r-xr-xr-x. 1 mqm  mqm  14632 Jul 10  2020 amqsstop
+-r-sr-s---. 1 mqm  mqm  15016 Jul 10  2020 amqspdbg
+-r-sr-s---. 1 mqm  mqm  10824 Jul 10  2020 amqrrmfa
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 amqrmppa
+-r-sr-s---. 1 mqm  mqm 474360 Jul 10  2020 amqrfdm
+-r-sr-s---. 1 mqm  mqm  23336 Jul 10  2020 amqrdbgm
+-r-sr-s---. 1 mqm  mqm  19208 Jul 10  2020 amqrcmla
+-r-xr-xr-x. 1 mqm  mqm   1066 Jul 10  2020 amqp.sh
+-r-sr-s---. 1 mqm  mqm  10856 Jul 10  2020 amqpcsea
+-r-sr-s---. 1 mqm  mqm  23200 Jul 10  2020 amqorxr
+-r-xr-x---. 1 mqm  mqm  23296 Jul 10  2020 amqoamd
+-r-sr-s---. 1 mqm  mqm  60392 Jul 10  2020 amqmfsck
+-r-xr-x---. 1 mqm  mqm  17804 Jul 10  2020 amqltmcc
+-r-xr-x---. 1 mqm  mqm  17804 Jul 10  2020 amqltmc0
+-r-sr-s---. 1 mqm  mqm  19240 Jul 10  2020 amqldmpa
+-r-xr-xr-x. 1 mqm  mqm   1191 Jul 10  2020 amqjrever
+-r-xr-xr-x. 1 mqm  mqm   3693 Jul 10  2020 amqigski
+-r-xr-xr-x. 1 mqm  mqm  22896 Jul 10  2020 amqicvar
+-r-xr-xr-x. 1 mqm  mqm   3799 Jul 10  2020 amqicrel
+-r-xr-xr-x. 1 mqm  mqm  23160 Jul 10  2020 amqiclib
+-r-sr-s---. 1 mqm  mqm  27656 Jul 10  2020 amqiclen
+-r-xr-xr-x. 1 mqm  mqm   6919 Jul 10  2020 amqicfil
+-r-xr-x---. 1 mqm  mqm  67064 Jul 10  2020 amqicdir
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 amqfqpub
+-r-sr-s---. 1 mqm  mqm   6664 Jul 10  2020 amqfcxba
+-r-sr-s---. 1 mqm  mqm  15112 Jul 10  2020 amqcrsta
+-r-xr-xr-x. 1 mqm  mqm  64464 Jul 10  2020 amqcgskv64
+-r-xr-xr-x. 1 mqm  mqm  67660 Jul 10  2020 amqcgskv32
+-r-sr-s---. 1 mqm  mqm  23336 Jul 10  2020 addmqinf
+dr-xr-x---. 2 root mqm     54 Jul  5 00:50 security
+lrwxrwxrwx. 1 mqm  mqm     21 Jul  5 00:50 strmqbrk -> /opt/mqm/bin/runmqbrk
+-r-xr-x---. 1 mqm  mqm   4043 Jul  5 00:53 dspmqweb
+-r-xr-x---. 1 mqm  mqm   2496 Jul  5 00:53 endmqweb
+-r-xr-x---. 1 mqm  mqm   4079 Jul  5 00:53 setmqweb
+-r-xr-x---. 1 mqm  mqm   2701 Jul  5 00:53 strmqweb
+-r--r--r--. 1 mqm  mqm    291 Jul  5 00:54 MQExplorer.ini
+[root@localhost bin]# ./setmqinst -i -p /opt/mqm/
+143 of 143 tasks have been completed successfully.
+'Installation1' (/opt/mqm) set as the primary installation.
+[root@localhost bin]#
+[root@localhost bin]#
+[root@localhost bin]#
+[root@localhost bin]# dspmqvers
+-bash: dspmqvers: command not found
+[root@localhost bin]# dspmqver
+Name:        IBM MQ
+Version:     9.2.0.0
+Level:       p920-L200710.TRIAL
+BuildType:   IKAP - (Production)
+Platform:    IBM MQ for Linux (x86-64 platform)
+Mode:        64-bit
+O/S:         Linux 3.10.0-862.el7.x86_64
+O/S Details: Red Hat Enterprise Linux Server 7.5 (Maipo)
+InstName:    Installation1
+InstDesc:
+Primary:     Yes
+InstPath:    /opt/mqm
+DataPath:    /var/mqm
+MaxCmdLevel: 920
+LicenseType: Trial
+[root@localhost bin]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3        18G   11G  6.9G  62% /
+devtmpfs        900M     0  900M   0% /dev
+tmpfs           911M     0  911M   0% /dev/shm
+tmpfs           911M  9.6M  902M   2% /run
+tmpfs           911M     0  911M   0% /sys/fs/cgroup
+/dev/sda1       297M  124M  174M  42% /boot
+tmpfs           183M     0  183M   0% /run/user/0
+[root@localhost bin]# mkdir /mqha
+[root@localhost bin]#
+[root@localhost bin]#
+[root@localhost bin]#
+[root@localhost bin]# su - mqm
+Last login: Tue Jul  5 00:11:01 PDT 2022 on pts/0
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmqver
+Name:        IBM MQ
+Version:     9.2.0.0
+Level:       p920-L200710.TRIAL
+BuildType:   IKAP - (Production)
+Platform:    IBM MQ for Linux (x86-64 platform)
+Mode:        64-bit
+O/S:         Linux 3.10.0-862.el7.x86_64
+O/S Details: Red Hat Enterprise Linux Server 7.5 (Maipo)
+InstName:    Installation1
+InstDesc:
+Primary:     Yes
+InstPath:    /opt/mqm
+DataPath:    /var/mqm
+MaxCmdLevel: 920
+LicenseType: Trial
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ crtmqm BAN_QM1
+There are 88 days left in the trial period for this copy of IBM MQ.
+IBM MQ queue manager created.
+Directory '/var/mqm/qmgrs/BAN_QM1' created.
+The queue manager is associated with installation 'Installation1'.
+Creating or replacing default objects for queue manager 'BAN_QM1'.
+Default objects statistics : 83 created. 0 replaced. 0 failed.
+Completing setup.
+Setup completed.
+-bash-4.2$ ./crtmqm
+-bash: ./crtmqm: No such file or directory
+-bash-4.2$ crtmqm
+AMQ7048E: The queue manager name is either not valid or not known.
+-bash-4.2$ ./crtmqm --help
+-bash: ./crtmqm: No such file or directory
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ cd /opt/mqm/bin
+-bash-4.2$ ./crtmqm --help
+AMQ7027E: Argument --help supplied to command ./crtmqm is invalid.
+Usage: crtmqm [-z] [-q] [-c Text] [-d DefXmitQ] [-h MaxHandles]
+              [-md DataPath] [-g ApplicationGroup] [-oa user|group]
+              [-t TrigInt] [-u DeadQ] [-x MaxUMsgs] [-lp LogPri] [-ls LogSec]
+              [-lc | -ll | -lla | -lln] [-lf LogFileSize] [-ld LogPath]
+              [-ii Path] [-ic Path] [-iv Name=Value[;Name=Value]]
+              [-p Port] QMgrName
+
+ -c   Descriptive text.
+ -d   Default transmission queue name.
+ -g   Restrict use of the queue manager to this group.
+ -h   Maximum number of handles per connection handle.
+ -ii  Automatic configuration INI url/path/directory
+ -ic  Automatic configuration MQSC url/path/directory
+ -iv  Automatic configuration user variables.
+ -lc  Use circular logging.
+ -ld  Directory used to hold the log files for the queue manager.
+ -lf  Log file size, specified in units of 4 KB pages.
+ -ll  Use linear logging.
+ -lla Use linear logging with automatic management of log extents.
+ -lln Use linear logging with user archive management of log extents.
+ -lp  Primary log files allocated when the queue manager is created.
+ -ls  Secondary log files allocated when the primary files are exhausted.
+ -md  Directory used to hold the data files for the queue manager.
+ -oa  Authorization policy for the queue manager.
+ -p   Create listener configured for TCP/IP on the specified port.
+ -q   Make this queue manager the default queue manager.
+ -t   Trigger interval in milliseconds.
+ -u   Dead-letter queue name.
+ -x   Maximum number of uncommitted messages under any one syncpoint.
+ -z   Suppress error messages.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Ended immediately)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ strmqm BAN_QM1
+There are 88 days left in the trial period for this copy of IBM MQ.
+The system resource RLIMIT_NOFILE is set at an unusually low level for IBM MQ.
+IBM MQ queue manager 'BAN_QM1' starting.
+The queue manager is associated with installation 'Installation1'.
+5 log records accessed on queue manager 'BAN_QM1' during the log replay phase.
+Log replay for queue manager 'BAN_QM1' complete.
+Transaction manager state recovered for queue manager 'BAN_QM1'.
+IBM MQ queue manager 'BAN_QM1' started using V9.2.0.0.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ runmqsc BAN_QM1
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager BAN_QM1.
+
+
+dis QM(status)
+     1 : dis QM(status)
+AMQ8147E: IBM MQ object STATUS not found.
+dis QMstatus
+     2 : dis QMstatus
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(BAN_QM1)                         STATUS(RUNNING)
+dis QMstatus all
+     3 : dis QMstatus all
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(BAN_QM1)                         STATUS(RUNNING)
+   ARCHSZ(0)                               CHINIT(RUNNING)
+   CMDSERV(RUNNING)                        CONNS(25)
+   INSTDESC( )                             INSTNAME(Installation1)
+   INSTPATH(/opt/mqm)                      LDAPCONN(INACTIVE)
+   LOGINUSE(2)
+   LOGPATH(/var/mqm/log/BAN_QM1/active/)
+   LOGUTIL(2)                              MEDIASZ(0)
+   RECSZ(1)                                REUSESZ(0)
+   STANDBY(NOPERMIT)                       STARTDA(2022-07-05)
+   STARTTI(01.02.23)
+
+       :
+
+       :
+dis qmgr
+     4 : dis qmgr
+AMQ8408I: Display Queue Manager details.
+   QMNAME(BAN_QM1)                         ACCTCONO(DISABLED)
+   ACCTINT(1800)                           ACCTMQI(OFF)
+   ACCTQ(OFF)                              ACTIVREC(MSG)
+   ACTVCONO(DISABLED)                      ACTVTRC(OFF)
+   ADVCAP(ENABLED)                         ALTDATE(2022-07-05)
+   ALTTIME(01.00.44)                       AMQPCAP(YES)
+   AUTHOREV(DISABLED)                      CCSID(1208)
+   CERTLABL(ibmwebspheremqban_qm1)         CERTVPOL(ANY)
+   CHAD(DISABLED)                          CHADEV(DISABLED)
+   CHADEXIT( )                             CHLEV(DISABLED)
+   CHLAUTH(ENABLED)                        CLWLDATA( )
+   CLWLEXIT( )                             CLWLLEN(100)
+   CLWLMRUC(999999999)                     CLWLUSEQ(LOCAL)
+   CMDEV(DISABLED)                         CMDLEVEL(920)
+   COMMANDQ(SYSTEM.ADMIN.COMMAND.QUEUE)    CONFIGEV(DISABLED)
+   CONNAUTH(SYSTEM.DEFAULT.AUTHINFO.IDPWOS)
+   CRDATE(2022-07-05)                      CRTIME(01.00.44)
+   CUSTOM( )                               DEADQ( )
+   DEFCLXQ(SCTQ)                           DEFXMITQ( )
+   DESCR( )                                DISTL(YES)
+   IMGINTVL(60)                            IMGLOGLN(OFF)
+   IMGRCOVO(YES)                           IMGRCOVQ(YES)
+   IMGSCHED(MANUAL)                        INHIBTEV(DISABLED)
+   IPADDRV(IPV4)                           LOCALEV(DISABLED)
+   LOGGEREV(DISABLED)                      MARKINT(5000)
+   MAXHANDS(256)                           MAXMSGL(4194304)
+   MAXPROPL(NOLIMIT)                       MAXPRTY(9)
+   MAXUMSGS(10000)                         MONACLS(QMGR)
+   MONCHL(OFF)                             MONQ(OFF)
+   PARENT( )                               PERFMEV(DISABLED)
+   PLATFORM(UNIX)                          PSMODE(ENABLED)
+   PSCLUS(ENABLED)                         PSNPMSG(DISCARD)
+   PSNPRES(NORMAL)                         PSRTYCNT(5)
+   PSSYNCPT(IFPER)                         QMID(BAN_QM1_2022-07-05_01.00.44)
+   REMOTEEV(DISABLED)                      REPOS( )
+   REPOSNL( )                              REVDNS(ENABLED)
+   ROUTEREC(MSG)                           SCHINIT(QMGR)
+   SCMDSERV(QMGR)                          SPLCAP(ENABLED)
+   SSLCRLNL( )                             SSLCRYP( )
+   SSLEV(DISABLED)                         SSLFIPS(NO)
+   SSLKEYR(/var/mqm/qmgrs/BAN_QM1/ssl/key)
+   SSLRKEYC(0)                             STATACLS(QMGR)
+   STATCHL(OFF)                            STATINT(1800)
+   STATMQI(OFF)                            STATQ(OFF)
+   STRSTPEV(ENABLED)                       SUITEB(NONE)
+   SYNCPT                                  TREELIFE(1800)
+   TRIGINT(999999999)                      VERSION(09020000)
+   XRCAP(YES)
+
+       :
+
+       :
+dis chl(*)
+     5 : dis chl(*)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.RECEIVER)           CHLTYPE(RCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.SVRCONN)            CHLTYPE(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.AMQP)                CHLTYPE(AMQP)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLUSRCVR)            CHLTYPE(CLUSRCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLUSSDR)             CHLTYPE(CLUSSDR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.RECEIVER)            CHLTYPE(RCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.REQUESTER)           CHLTYPE(RQSTR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SENDER)              CHLTYPE(SDR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SERVER)              CHLTYPE(SVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLNTCONN)            CHLTYPE(CLNTCONN)
+
+       :
+dis listener(*)
+     6 : dis listener(*)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+
+       :
+dis
+     7 : dis
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+dis
+
+AMQ8426I: Valid MQSC commands are:
+
+    DISPLAY APSTATUS
+    DISPLAY AUTHINFO
+    DISPLAY AUTHREC
+    DISPLAY AUTHSERV
+    DISPLAY CHANNEL
+    DISPLAY CHLAUTH
+    DISPLAY CHSTATUS
+    DISPLAY CLUSQMGR
+    DISPLAY COMMINFO
+    DISPLAY CONN
+    DISPLAY ENTAUTH
+    DISPLAY LISTENER
+    DISPLAY LSSTATUS
+    DISPLAY NAMELIST
+    DISPLAY POLICY
+    DISPLAY PROCESS
+    DISPLAY PUBSUB
+    DISPLAY QALIAS
+    DISPLAY QCLUSTER
+    DISPLAY QLOCAL
+    DISPLAY QMGR
+    DISPLAY QMODEL
+    DISPLAY QMSTATUS
+    DISPLAY QREMOTE
+    DISPLAY QSTATUS
+    DISPLAY QUEUE
+    DISPLAY SBSTATUS
+    DISPLAY SERVICE
+    DISPLAY SUB
+    DISPLAY SVSTATUS
+    DISPLAY TCLUSTER
+    DISPLAY TOPIC
+    DISPLAY TPSTATUS
+dis LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+     8 : dis LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)   CONTROL(MANUAL)
+   TRPTYPE(TCP)                            PORT(0)
+   IPADDR( )                               BACKLOG(0)
+   DESCR( )                                ALTDATE(2022-07-05)
+   ALTTIME(01.00.44)
+
+       :
+
+       :
+define listener(BAN_LST) PORT(1414)
+     9 : define listener(BAN_LST) PORT(1414)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+define listener(BAN_LST) PORT
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DEFINE LISTENER( listener_name )
+   TRPTYPE( TCP )
+
+       :
+
+       :
+define listener(BAN_LST) TRPTYPE(TCP) PORT(1414)  CONTROL(QMGR)
+    10 : define listener(BAN_LST) TRPTYPE(TCP) PORT(1414)  CONTROL(QMGR)
+AMQ8626I: IBM MQ listener created.
+
+       :
+dis listener(*)
+    11 : dis listener(*)
+AMQ8630I: Display listener information details.
+   LISTENER(BAN_LST)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+
+       :
+
+       :
+dis lsstatus(*)
+    12 : dis lsstatus(*)
+AMQ8147E: IBM MQ object * not found.
+
+       :
+start listener(BAN_LST)
+    13 : start listener(BAN_LST)
+AMQ8021I: Request to start IBM MQ listener accepted.
+
+       :
+dis lsstatus(*)
+    14 : dis lsstatus(*)
+AMQ8631I: Display listener status details.
+   LISTENER(BAN_LST)                       STATUS(RUNNING)
+   PID(6917)
+
+       :
+
+       :
+dis lsstatus(BAN_LST)
+    15 : dis lsstatus(BAN_LST)
+AMQ8631I: Display listener status details.
+   LISTENER(BAN_LST)                       STATUS(RUNNING)
+   PID(6917)                               STARTDA(2022-07-05)
+   STARTTI(01.10.59)                       DESCR( )
+   TRPTYPE(TCP)                            CONTROL(QMGR)
+   IPADDR(*)                               PORT(1414)
+   BACKLOG(100)
+
+       :
+dis qr(*)
+    16 : dis qr(*)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.REMOTE.QUEUE)      TYPE(QREMOTE)
+
+       :
+dis qr(SYSTEM.DEFAULT.REMOTE.QUEUE)
+    17 : dis qr(SYSTEM.DEFAULT.REMOTE.QUEUE)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.REMOTE.QUEUE)      TYPE(QREMOTE)
+   ALTDATE(2022-07-05)                     ALTTIME(01.00.44)
+   CLUSNL( )                               CLUSTER( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DESCR( )
+   PUT(ENABLED)                            RQMNAME( )
+   RNAME( )                                SCOPE(QMGR)
+   XMITQ( )
+
+       :
+define qr(BAN_TO_HYD) RQMNAME(HYD_QM2) RNAME(HYD_LOCAL) XMITQ(BAN.XMITQ) DESCR('BAN to HYD remote queue steup')
+    18 : define qr(BAN_TO_HYD) RQMNAME(HYD_QM2) RNAME(HYD_LOCAL) XMITQ(BAN.XMITQ) DESCR('BAN to HYD remote queue steup')
+AMQ8006I: IBM MQ queue created.
+
+       :
+
+       :
+dis qr(*)
+    19 : dis qr(*)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_TO_HYD)                       TYPE(QREMOTE)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.REMOTE.QUEUE)      TYPE(QREMOTE)
+dis qr(BAN_TO_HYD)
+    20 : dis qr(BAN_TO_HYD)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_TO_HYD)                       TYPE(QREMOTE)
+   ALTDATE(2022-07-05)                     ALTTIME(01.14.23)
+   CLUSNL( )                               CLUSTER( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DESCR(BAN to HYD remote queue steup)
+   PUT(ENABLED)                            RQMNAME(HYD_QM2)
+   RNAME(HYD_LOCAL)                        SCOPE(QMGR)
+   XMITQ(BAN.XMITQ)
+
+       :
+
+       :
+dis ql(*)
+    21 : dis ql(*)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.ACCOUNTING.QUEUE)    TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.ACTIVITY.QUEUE)      TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.CHANNEL.EVENT)       TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.COMMAND.EVENT)       TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.COMMAND.QUEUE)       TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.CONFIG.EVENT)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.LOGGER.EVENT)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.PERFM.EVENT)         TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.PUBSUB.EVENT)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.QMGR.EVENT)          TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.STATISTICS.QUEUE)    TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.TRACE.ACTIVITY.QUEUE)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.ADMIN.TRACE.ROUTE.QUEUE)   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.AMQP.COMMAND.QUEUE)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.AUTH.DATA.QUEUE)           TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.BROKER.ADMIN.STREAM)       TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.BROKER.CONTROL.QUEUE)      TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.BROKER.DEFAULT.STREAM)     TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.BROKER.INTER.BROKER.COMMUNICATIONS)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CHANNEL.INITQ)             TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CHANNEL.SYNCQ)             TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CHLAUTH.DATA.QUEUE)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CICS.INITIATION.QUEUE)     TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CLUSTER.COMMAND.QUEUE)     TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CLUSTER.HISTORY.QUEUE)     TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CLUSTER.REPOSITORY.QUEUE)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.CLUSTER.TRANSMIT.QUEUE)    TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DDELAY.LOCAL.QUEUE)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEAD.LETTER.QUEUE)         TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.INITIATION.QUEUE)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.LOCAL.QUEUE)       TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DOTNET.XARECOVERY.QUEUE)   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DURABLE.SUBSCRIBER.QUEUE)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.HIERARCHY.STATE)           TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.INTER.QMGR.CONTROL)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.INTER.QMGR.FANREQ)         TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.INTER.QMGR.PUBS)           TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.INTERNAL.REPLY.QUEUE)      TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.INTERNAL.REQUEST.QUEUE)    TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.PENDING.DATA.QUEUE)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.PROTECTION.ERROR.QUEUE)    TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.PROTECTION.POLICY.QUEUE)   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.REST.REPLY.QUEUE)          TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.RETAINED.PUB.QUEUE)        TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.SELECTION.EVALUATION.QUEUE)
+   TYPE(QLOCAL)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.SELECTION.VALIDATION.QUEUE)
+   TYPE(QLOCAL)
+
+       :
+
+       :
+define ql(BAN_LQ)
+    22 : define ql(BAN_LQ)
+AMQ8006I: IBM MQ queue created.
+display ql(BAN_LQ)
+    23 : display ql(BAN_LQ)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_LQ)                           TYPE(QLOCAL)
+   ACCTQ(QMGR)                             ALTDATE(2022-07-05)
+   ALTTIME(01.19.42)                       BOQNAME( )
+   BOTHRESH(0)                             CLUSNL( )
+   CLUSTER( )                              CLCHNAME( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CLWLUSEQ(QMGR)                          CRDATE(2022-07-05)
+   CRTIME(01.19.42)                        CURDEPTH(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DEFREADA(NO)
+   DEFSOPT(SHARED)                         DEFTYPE(PREDEFINED)
+   DESCR( )                                DISTL(NO)
+   GET(ENABLED)                            HARDENBO
+   IMGRCOVQ(QMGR)                          INITQ( )
+   IPPROCS(0)                              MAXDEPTH(5000)
+   MAXMSGL(4194304)                        MAXFSIZE(DEFAULT)
+   MONQ(QMGR)                              MSGDLVSQ(PRIORITY)
+   NOTRIGGER                               NPMCLASS(NORMAL)
+   OPPROCS(0)                              PROCESS( )
+   PUT(ENABLED)                            PROPCTL(COMPAT)
+   QDEPTHHI(80)                            QDEPTHLO(20)
+   QDPHIEV(DISABLED)                       QDPLOEV(DISABLED)
+   QDPMAXEV(ENABLED)                       QSVCIEV(NONE)
+   QSVCINT(999999999)                      RETINTVL(999999999)
+   SCOPE(QMGR)                             SHARE
+   STATQ(QMGR)                             TRIGDATA( )
+   TRIGDPTH(1)                             TRIGMPRI(0)
+   TRIGTYPE(FIRST)                         USAGE(NORMAL)
+
+       :
+
+       :
+
+       :
+define ql(BAN.XMITQ)  usage(XMITQ) TRIGDATA(BAN_HYD_SEND)
+    24 : define ql(BAN.XMITQ)  usage(XMITQ) TRIGDATA(BAN_HYD_SEND)
+AMQ8006I: IBM MQ queue created.
+display ql(BAN.XMITQ)
+    25 : display ql(BAN.XMITQ)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN.XMITQ)                        TYPE(QLOCAL)
+   ACCTQ(QMGR)                             ALTDATE(2022-07-05)
+   ALTTIME(01.22.10)                       BOQNAME( )
+   BOTHRESH(0)                             CLUSNL( )
+   CLUSTER( )                              CLCHNAME( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CLWLUSEQ(QMGR)                          CRDATE(2022-07-05)
+   CRTIME(01.22.10)                        CURDEPTH(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DEFREADA(NO)
+   DEFSOPT(SHARED)                         DEFTYPE(PREDEFINED)
+   DESCR( )                                DISTL(NO)
+   GET(ENABLED)                            HARDENBO
+   IMGRCOVQ(QMGR)                          INITQ( )
+   IPPROCS(0)                              MAXDEPTH(5000)
+   MAXMSGL(4194304)                        MAXFSIZE(DEFAULT)
+   MONQ(QMGR)                              MSGDLVSQ(PRIORITY)
+   NOTRIGGER                               NPMCLASS(NORMAL)
+   OPPROCS(0)                              PROCESS( )
+   PUT(ENABLED)                            PROPCTL(COMPAT)
+   QDEPTHHI(80)                            QDEPTHLO(20)
+   QDPHIEV(DISABLED)                       QDPLOEV(DISABLED)
+   QDPMAXEV(ENABLED)                       QSVCIEV(NONE)
+   QSVCINT(999999999)                      RETINTVL(999999999)
+   SCOPE(QMGR)                             SHARE
+   STATQ(QMGR)                             TRIGDATA(BAN_HYD_SEND)
+   TRIGDPTH(1)                             TRIGMPRI(0)
+   TRIGTYPE(FIRST)                         USAGE(XMITQ)
+
+       :
+
+       :
+
+       :
+
+       :
+display channel(*)
+    26 : display channel(*)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.RECEIVER)           CHLTYPE(RCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.SVRCONN)            CHLTYPE(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.AMQP)                CHLTYPE(AMQP)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLUSRCVR)            CHLTYPE(CLUSRCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLUSSDR)             CHLTYPE(CLUSSDR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.RECEIVER)            CHLTYPE(RCVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.REQUESTER)           CHLTYPE(RQSTR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SENDER)              CHLTYPE(SDR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SERVER)              CHLTYPE(SVR)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.CLNTCONN)            CHLTYPE(CLNTCONN)
+
+       :
+
+       :
+
+       :
+
+       :
+display channel(SYSTEM.DEF.SENDER)
+    27 : display channel(SYSTEM.DEF.SENDER)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SENDER)              CHLTYPE(SDR)
+   ALTDATE(2022-07-05)                     ALTTIME(01.00.44)
+   BATCHHB(0)                              BATCHINT(0)
+   BATCHLIM(5000)                          BATCHSZ(50)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           CONNAME( )
+   CONVERT(NO)                             DESCR( )
+   DISCINT(6000)                           HBINT(300)
+   KAINT(AUTO)                             LOCLADDR( )
+   LONGRTY(999999999)                      LONGTMR(1200)
+   MAXMSGL(4194304)                        MCANAME( )
+   MCATYPE(PROCESS)                        MCAUSER( )
+   MODENAME( )                             MONCHL(QMGR)
+   MSGDATA( )                              MSGEXIT( )
+   NPMSPEED(FAST)                          PASSWORD( )
+   PROPCTL(COMPAT)                         RCVDATA( )
+   RCVEXIT( )                              RESETSEQ(NO)
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SEQWRAP(999999999)                      SHORTRTY(10)
+   SHORTTMR(60)                            SSLCIPH( )
+   SSLPEER( )                              STATCHL(QMGR)
+   TPNAME( )                               TRPTYPE(TCP)
+   USEDLQ(YES)                             USERID( )
+   XMITQ( )
+
+       :
+
+       :
+define channel(BAN_HYD_SEND) chltype(SDR) XMITQ(BAN.XMITQ) CONNAME('192.168.0.5(1415)')
+    28 : define channel(BAN_HYD_SEND) chltype(SDR) XMITQ(BAN.XMITQ) CONNAME('192.168.0.5(1415)')
+AMQ8014I: IBM MQ channel created.
+display channel(BAN_HYD_SEND)
+    29 : display channel(BAN_HYD_SEND)
+AMQ8414I: Display Channel details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(SDR)
+   ALTDATE(2022-07-05)                     ALTTIME(01.24.39)
+   BATCHHB(0)                              BATCHINT(0)
+   BATCHLIM(5000)                          BATCHSZ(50)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           CONNAME(192.168.0.5(1415))
+   CONVERT(NO)                             DESCR( )
+   DISCINT(6000)                           HBINT(300)
+   KAINT(AUTO)                             LOCLADDR( )
+   LONGRTY(999999999)                      LONGTMR(1200)
+   MAXMSGL(4194304)                        MCANAME( )
+   MCATYPE(PROCESS)                        MCAUSER( )
+   MODENAME( )                             MONCHL(QMGR)
+   MSGDATA( )                              MSGEXIT( )
+   NPMSPEED(FAST)                          PASSWORD( )
+   PROPCTL(COMPAT)                         RCVDATA( )
+   RCVEXIT( )                              RESETSEQ(NO)
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SEQWRAP(999999999)                      SHORTRTY(10)
+   SHORTTMR(60)                            SSLCIPH( )
+   SSLPEER( )                              STATCHL(QMGR)
+   TPNAME( )                               TRPTYPE(TCP)
+   USEDLQ(YES)                             USERID( )
+   XMITQ(BAN.XMITQ)
+
+       :
+ping chl(BAN_HYD_SEND)
+    30 : ping chl(BAN_HYD_SEND)
+AMQ8020I: Ping IBM MQ channel complete.
+
+       :
+
+       :
+
+       :
+start channel(BAN_HYD_SEND)
+    31 : start channel(BAN_HYD_SEND)
+AMQ8018I: Start IBM MQ channel accepted.
+
+       :
+display chs(BAN_HYD_SEND)
+    32 : display chs(BAN_HYD_SEND)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(SDR)
+   CONNAME(192.168.0.5(1415))              CURRENT
+   RQMNAME(HYD_MQ2)                        STATUS(RUNNING)
+   SUBSTATE(MQGET)                         XMITQ(BAN.XMITQ)
+
+       :
+
+       :
+
+       :
+display chl(*) chltype(SVRCON)
+    33 : display chl(*) chltype(SVRCON)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+display chl(*) chltype(SVRC
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CHANNEL( generic_channel_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ TYPE( ALL | SDR | SVR | RCVR | RQSTR | CLNTCONN | SVRCONN |
+             CLUSSDR | CLUSRCVR | AMQP | MQTT* ) ]
+
+     [ ALL      ] [ AFFINITY ] [ ALTDATE  ] [ ALTTIME  ] [ AMQPKA   ]
+     [ BACKLOG  ] [ BATCHHB  ] [ BATCHINT ] [ BATCHLIM ] [ BATCHSZ  ]
+     [ CERTLABL ] [ CHLTYPE  ] [ CLNTWGHT ] [ CLUSNL   ] [ CLUSTER  ]
+     [ CLWLPRTY ] [ CLWLRANK ] [ CLWLWGHT ] [ COMPHDR  ] [ COMPMSG  ]
+     [ CONNAME  ] [ CONVERT  ] [ DEFRECON ] [ DESCR    ] [ DISCINT  ]
+     [ HBINT    ] [ KAINT    ] [ LOCLADDR ] [ LONGRTY  ] [ LONGTMR  ]
+     [ MAXINST  ] [ MAXINSTC ] [ MAXMSGL  ] [ MCANAME  ] [ MCATYPE  ]
+     [ MCAUSER  ] [ MODENAME ] [ MONCHL   ] [ MRDATA   ] [ MREXIT   ]
+     [ MRRTY    ] [ MRTMR    ] [ MSGDATA  ] [ MSGEXIT  ] [ NETPRTY  ]
+     [ NPMSPEED ] [ PASSWORD ] [ PORT     ] [ PROPCTL  ] [ PUTAUT   ]
+     [ QMNAME   ] [ RCVDATA  ] [ RCVEXIT  ] [ RESETSEQ ] [ SCYDATA  ]
+     [ SCYEXIT  ] [ SENDDATA ] [ SENDEXIT ] [ SEQWRAP  ] [ SHARECNV ]
+     [ SHORTRTY ] [ SHORTTMR ] [ SSLCAUTH ] [ SSLCIPH  ] [ SSLKEYP  ]
+     [ SSLKEYR  ] [ SSLPEER  ] [ STATCHL  ] [ TPNAME   ] [ TPROOT   ]
+     [ TRPTYPE  ] [ TYPE     ] [ USECLTID ] [ USEDLQ   ] [ USERID   ]
+     [ XMITQ    ]
+
+       :
+
+       :
+display chl(*) chltype(SVRCONN)
+    34 : display chl(*) chltype(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.SVRCONN)            CHLTYPE(SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+
+       :
+
+       :
+display chl(SYSTEM.DEF.SVRCONN)
+    35 : display chl(SYSTEM.DEF.SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+   ALTDATE(2022-07-05)                     ALTTIME(01.00.44)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER( )                              MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)
+
+       :
+
+       :
+define chl(SVR_CONN) CHLTYPE(SVRCONN)
+    36 : define chl(SVR_CONN) CHLTYPE(SVRCONN)
+AMQ8014I: IBM MQ channel created.
+
+       :
+
+       :
+end
+    37 : end
+36 MQSC commands read.
+3 commands have a syntax error.
+2 valid MQSC commands could not be processed.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ pwd
+/opt/mqm/bin
+-bash-4.2$ ./amqs
+amqspdbg  amqsstop
+-bash-4.2$ ./amqs
+amqspdbg  amqsstop
+-bash-4.2$ cd samp
+-bash: cd: samp: No such file or directory
+-bash-4.2$ ls
+addmqinf    amqorxr    amqzmuf0   dspmqinf     fteBundleConfiguration                fteDeleteMonitor                fteSetupCoordination  rsvmqtrn   setmqm
+amqcgskv32  amqpcsea   amqzmur0   dspmqinst    ftebxfer                              fteDeleteScheduledTransfer      fteShowAgentDetails   runmqakm   setmqprd
+amqcgskv64  amqp.sh    amqzxma0   dspmqlic     fteCancelTransfer                     fteDeleteTemplates              fteShowLoggerDetails  runmqbcb   setmqspl
+amqcrsta    amqrcmla   crtmqcvx   dspmqras     fteChangeDefaultConfigurationOptions  fteDisplayVersion               fteStartAgent         runmqbrk   setmqweb
+amqfcxba    amqrdbgm   crtmqdir   dspmqrte     fteCleanAgent                         fteListAgents                   fteStartLogger        runmqchi   setmqxacred
+amqfqpub    amqrfdm    crtmqenv   dspmqspl     fteClearMonitorHistory                fteListMonitors                 fteStopAgent          runmqchl   strmqbrk
+amqicdir    amqrmppa   crtmqinst  dspmqtrc     fteCommon                             fteListScheduledTransfers       fteStopLogger         runmqckm   strmqcfg
+amqicfil    amqrrmfa   crtmqm     dspmqtrn     fteCreateAgent                        fteListTemplates                ftetag                runmqdlq   strmqcsv
+amqiclen    amqspdbg   dltmqbrk   dspmqver     fteCreateBridgeAgent                  fteMigrateAgent                 isa.xml               runmqlsr   strmqikm
+amqiclib    amqsstop   dltmqinst  dspmqweb     fteCreateCDAgent                      fteMigrateConfigurationOptions  migmqlog              runmqras   strmqm
+amqicrel    amqwlpver  dltmqm     endmqbrk     fteCreateLogger                       fteMigrateLogger                mqcertck              runmqsc    strmqtrc
+amqicvar    amqxdbg    dmpmqaut   endmqcsv     fteCreateMonitor                      fteObfuscate                    mqconfig              runmqsfb   strmqweb
+amqigski    amqxmsg0   dmpmqcfg   endmqlsr     fteCreateTemplate                     ftePingAgent                    MQExplorer            runmqtmc
+amqjrever   amqzfuma   dmpmqlog   endmqm       fteCreateTransfer                     ftePlatform                     MQExplorer.ini        runmqtrm
+amqldmpa    amqzlaa0   dmpmqmsg   endmqsde     ftecxfer                              fteRAS                          mqlicense             runswchl
+amqltmc0    amqzlsa0   dspmq      endmqtrc     fteDefine                             fteSetAgentLogLevel             mqrc                  security
+amqltmcc    amqzlwa0   dspmqaut   endmqweb     fteDelete                             fteSetAgentTraceLevel           rcdmqimg              setmqaut
+amqmfsck    amqzmgr0   dspmqcsv   ffstsummary  fteDeleteAgent                        fteSetLoggerTraceLevel          rcrmqobj              setmqenv
+amqoamd     amqzmuc0   dspmqfls   fteAnt       fteDeleteLogger                       fteSetupCommands                rmvmqinf              setmqinst
+-bash-4.2$ cd /opt/mqm/s
+samp/    swidtag/
+-bash-4.2$ cd /opt/mqm/s
+samp/    swidtag/
+-bash-4.2$ cd /opt/mqm/samp/
+-bash-4.2$ ls
+amq0gbr0.cbl  amqmechx.cbl  amqsapt0.c    amqsclma.c    amqsghac.c  amqsprma.c  amqssbxa.c  amqstxpx.c     amqzscix.c       imqsget.cpp   pcf
+amq0get0.cbl  amqminqx.cbl  amqsaxe0.c    amqscnxc.c    amqsgrma.c  amqspse0.c  amqsseta.c  amqstxsx.c     bin              imqsput.cpp   preconnexit
+amq0ptl0.cbl  amqmsetx.cbl  amqsbcg0.c    amqscos0.tst  amqsinqa.c  amqsptl0.c  amqssslc.c  amqstxvx.flds  ccsid.new        imqwrld.cpp   pubsub
+amq0pub0.cbl  amqsact0.c    amqsblst.c    amqsecha.c    amqsiqma.c  amqspuba.c  amqsstma.c  amqstxvx.v     ccsid_part2.tbl  jms           service.env
+amq0put0.cbl  amqsaem0.c    amqscbf0.c    amqsevta.c    amqslog0.c  amqsput0.c  amqsstop.c  amqsvfc0.c     ccsid.tbl        mqat.ini      ubbstxcx.cfg
+amq0req0.cbl  amqsaicq.c    amqscic0.ccs  amqsfhac.c    amqsmhac.c  amqsqrma.c  amqssuba.c  amqswlm0.c     dlq              mqccred       web
+amq0sub0.cbl  amqsaiem.c    amqscic0.tst  amqsgbr0.c    amqsmon0.c  amqsreq0.c  amqstrg0.c  amqsxrma.c     dotnet           mqclient.ini  wmqjava
+amqmdefs.tst  amqsailq.c    amqscih0.h    amqsget0.c    amqsphac.c  amqsruaa.c  amqstxgx.c  amqzscgx.c     imqdput.cpp      mqs.ini       xatm
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ cd bin/
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ ls -ltr
+total 1832
+-r-xr-xr-x. 1 mqm mqm  22744 Jul 10  2020 amqsxrm
+-r-xr-xr-x. 1 mqm mqm   6120 Jul 10  2020 amqswlm
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqstrgc
+-r-xr-xr-x. 1 mqm mqm  10504 Jul 10  2020 amqstrg
+-r-xr-xr-x. 1 mqm mqm  10600 Jul 10  2020 amqssubc
+-r-xr-xr-x. 1 mqm mqm  10592 Jul 10  2020 amqssub
+-r-xr-xr-x. 1 mqm mqm  10536 Jul 10  2020 amqsstmc
+-r-xr-xr-x. 1 mqm mqm  10528 Jul 10  2020 amqsstm
+-r-xr-xr-x. 1 mqm mqm  14832 Jul 10  2020 amqssslc
+-r-xr-xr-x. 1 mqm mqm  18744 Jul 10  2020 amqssr2
+-r-xr-xr-x. 1 mqm mqm  15112 Jul 10  2020 amqssr1
+-r-xr-xr-x. 1 mqm mqm  14680 Jul 10  2020 amqsspc
+-r-xr-xr-x. 1 mqm mqm  10520 Jul 10  2020 amqssetc
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsset
+-r-xr-xr-x. 1 mqm mqm  18752 Jul 10  2020 amqssbxc
+-r-xr-xr-x. 1 mqm mqm  18752 Jul 10  2020 amqssbx
+-r-xr-xr-x. 1 mqm mqm  22904 Jul 10  2020 amqsruac
+-r-xr-xr-x. 1 mqm mqm  22904 Jul 10  2020 amqsrua
+-r-xr-xr-x. 1 mqm mqm  22928 Jul 10  2020 amqsrr2
+-r-xr-xr-x. 1 mqm mqm  22904 Jul 10  2020 amqsres
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsreqc
+-r-xr-xr-x. 1 mqm mqm  10504 Jul 10  2020 amqsreq
+-r-xr-xr-x. 1 mqm mqm  22768 Jul 10  2020 amqsqrm
+-r-xr-xr-x. 1 mqm mqm  14696 Jul 10  2020 amqsputc
+-r-xr-xr-x. 1 mqm mqm  14688 Jul 10  2020 amqsput
+-r-xr-xr-x. 1 mqm mqm  14696 Jul 10  2020 amqspubc
+-r-xr-xr-x. 1 mqm mqm  10592 Jul 10  2020 amqspub
+-r-xr-xr-x. 1 mqm mqm  10520 Jul 10  2020 amqsptlc
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsptl
+-r-xr-xr-x. 1 mqm mqm  10384 Jul 10  2020 amqspse
+-r-xr-xr-x. 1 mqm mqm  18752 Jul 10  2020 amqsprmc
+-r-xr-xr-x. 1 mqm mqm  18752 Jul 10  2020 amqsprm
+-r-xr-xr-x. 1 mqm mqm  14648 Jul 10  2020 amqspr2
+-r-xr-xr-x. 1 mqm mqm  14728 Jul 10  2020 amqspr1
+-r-xr-xr-x. 1 mqm mqm  14680 Jul 10  2020 amqsppc
+-r-xr-xr-x. 1 mqm mqm  10536 Jul 10  2020 amqsphac
+-r-xr-xr-x. 1 mqm mqm  30248 Jul 10  2020 amqsmonc
+-r-xr-xr-x. 1 mqm mqm  30248 Jul 10  2020 amqsmon
+-r-xr-xr-x. 1 mqm mqm  14664 Jul 10  2020 amqsmhac
+-r-xr-xr-x. 1 mqm mqm  10712 Jul 10  2020 amqslogc
+-r-xr-xr-x. 1 mqm mqm  10712 Jul 10  2020 amqslog
+-r-xr-xr-x. 1 mqm mqm  10528 Jul 10  2020 amqsiqmc
+-r-xr-xr-x. 1 mqm mqm  10520 Jul 10  2020 amqsiqm
+-r-xr-xr-x. 1 mqm mqm  10536 Jul 10  2020 amqsinqc
+-r-xr-xr-x. 1 mqm mqm  10528 Jul 10  2020 amqsinq
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsgrmc
+-r-xr-xr-x. 1 mqm mqm  10504 Jul 10  2020 amqsgrm
+-r-xr-xr-x. 1 mqm mqm  10576 Jul 10  2020 amqsgr2
+-r-xr-xr-x. 1 mqm mqm  10528 Jul 10  2020 amqsghac
+-r-xr-xr-x. 1 mqm mqm  14696 Jul 10  2020 amqsgetc
+-r-xr-xr-x. 1 mqm mqm  10592 Jul 10  2020 amqsget
+-r-xr-xr-x. 1 mqm mqm  10496 Jul 10  2020 amqsgbrc
+-r-xr-xr-x. 1 mqm mqm  10488 Jul 10  2020 amqsgbr
+-r-xr-xr-x. 1 mqm mqm  10576 Jul 10  2020 amqsgam
+-r-xr-xr-x. 1 mqm mqm  14624 Jul 10  2020 amqsfhac
+-r-xr-xr-x. 1 mqm mqm 408880 Jul 10  2020 amqsevt
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsechc
+-r-xr-xr-x. 1 mqm mqm  10504 Jul 10  2020 amqsech
+-r-xr-xr-x. 1 mqm mqm  86456 Jul 10  2020 amqsdlq
+-r-xr-xr-x. 1 mqm mqm  14616 Jul 10  2020 amqscnxc
+-r-xr-xr-x. 1 mqm mqm  47544 Jul 10  2020 amqsclm
+-r-xr-xr-x. 1 mqm mqm  10468 Jul 10  2020 amqscicc
+-r-xr-xr-x. 1 mqm mqm  10468 Jul 10  2020 amqscic0
+-r-xr-xr-x. 1 mqm mqm  14648 Jul 10  2020 amqscbfc
+-r-xr-xr-x. 1 mqm mqm  14648 Jul 10  2020 amqscbf
+-r-xr-xr-x. 1 mqm mqm  18944 Jul 10  2020 amqsblst
+-r-xr-xr-x. 1 mqm mqm  18872 Jul 10  2020 amqsbcgc
+-r-xr-xr-x. 1 mqm mqm  18864 Jul 10  2020 amqsbcg
+-r-xr-xr-x. 1 mqm mqm  76320 Jul 10  2020 amqsaxe_r
+-r-xr-xr-x. 1 mqm mqm  76320 Jul 10  2020 amqsaxe
+-r-xr-xr-x. 1 mqm mqm  10520 Jul 10  2020 amqsaptc
+-r-xr-xr-x. 1 mqm mqm  10512 Jul 10  2020 amqsapt
+-r-xr-xr-x. 1 mqm mqm  10312 Jul 10  2020 amqsaem_r
+-r-xr-xr-x. 1 mqm mqm  10304 Jul 10  2020 amqsaem
+-r-xr-xr-x. 1 mqm mqm  37416 Jul 10  2020 amqsactc
+-r-xr-xr-x. 1 mqm mqm  37416 Jul 10  2020 amqsact
+-r-xr-xr-x. 1 mqm mqm   3734 Jul 10  2020 amqauthg.sh
+dr-xr-xr-x. 2 mqm mqm    134 Jul  5 00:55 gl
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ ./amqsput
+Sample AMQSPUT0 start
+Required parameter missing - queue name
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+QMNAME(HYD_MQ2)                                           STATUS(Running)
+-bash-4.2$ runmqsc BAN_QM1
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager BAN_QM1.
+
+
+display qr(*)
+     1 : display qr(*)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_TO_HYD)                       TYPE(QREMOTE)
+AMQ8409I: Display Queue details.
+   QUEUE(SYSTEM.DEFAULT.REMOTE.QUEUE)      TYPE(QREMOTE)
+end
+     2 : end
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+-bash-4.2$ pwd
+/opt/mqm/samp/bin
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ ./amqsp
+amqsphac  amqsppc   amqspr1   amqspr2   amqsprm   amqsprmc  amqspse   amqsptl   amqsptlc  amqspub   amqspubc  amqsput   amqsputc
+-bash-4.2$ ./amqsp
+amqsphac  amqsppc   amqspr1   amqspr2   amqsprm   amqsprmc  amqspse   amqsptl   amqsptlc  amqspub   amqspubc  amqsput   amqsputc
+-bash-4.2$ ./amqsput  BAN_TO_HYD   BAN_QM1
+Sample AMQSPUT0 start
+target queue is BAN_TO_HYD
+TEST
+MASS
+CLASS
+
+Sample AMQSPUT0 end
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+QMNAME(HYD_MQ2)                                           STATUS(Running)
+-bash-4.2$ runmqsc BAN_QM1
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager BAN_QM1.
+
+
+display qr(BAN_TO_HYD)
+     1 : display qr(BAN_TO_HYD)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_TO_HYD)                       TYPE(QREMOTE)
+   ALTDATE(2022-07-05)                     ALTTIME(01.14.23)
+   CLUSNL( )                               CLUSTER( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DESCR(BAN to HYD remote queue steup)
+   PUT(ENABLED)                            RQMNAME(HYD_QM2)
+   RNAME(HYD_LOCAL)                        SCOPE(QMGR)
+   XMITQ(BAN.XMITQ)
+alter qr(BAN_TO_HYD) RQMNAME(HYD_MQ2)
+     2 : alter qr(BAN_TO_HYD) RQMNAME(HYD_MQ2)
+AMQ8008I: IBM MQ queue changed.
+
+       :
+
+       :
+display qr(BAN_TO_HYD)
+     3 : display qr(BAN_TO_HYD)
+AMQ8409I: Display Queue details.
+   QUEUE(BAN_TO_HYD)                       TYPE(QREMOTE)
+   ALTDATE(2022-07-05)                     ALTTIME(01.49.19)
+   CLUSNL( )                               CLUSTER( )
+   CLWLPRTY(0)                             CLWLRANK(0)
+   CUSTOM( )                               DEFBIND(OPEN)
+   DEFPRTY(0)                              DEFPSIST(NO)
+   DEFPRESP(SYNC)                          DESCR(BAN to HYD remote queue steup)
+   PUT(ENABLED)                            RQMNAME(HYD_MQ2)
+   RNAME(HYD_LOCAL)                        SCOPE(QMGR)
+   XMITQ(BAN.XMITQ)
+display qs(BAN.XMITQ)
+     4 : display qs(BAN.XMITQ)
+AMQ8450I: Display queue status details.
+   QUEUE(BAN.XMITQ)                        TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(1)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(1)
+   QTIME( , )                              UNCOM(NO)
+end
+     5 : end
+4 MQSC commands read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ ./amqsput  BAN_TO_HYD   BAN_QM1
+Sample AMQSPUT0 start
+target queue is BAN_TO_HYD
+TEST
+TES1
+CRT
+4321
+
+Sample AMQSPUT0 end
+-bash-4.2$
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+QMNAME(HYD_MQ2)                                           STATUS(Running)
+-bash-4.2$ runmqsc BAN_QM1
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager BAN_QM1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QM2:
+
+
+
+
+
+login as: root
+root@192.168.0.5's password:
+Last login: Tue Jul  5 00:49:23 2022 from 192.168.0.8
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# su - mqm
+Last login: Tue Jul  5 00:59:27 PDT 2022 on pts/0
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspm
+-bash: dspm: command not found
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ crtmqm HYD_MQ2
+There are 88 days left in the trial period for this copy of IBM MQ.
+IBM MQ queue manager created.
+Directory '/var/mqm/qmgrs/HYD_MQ2' created.
+The queue manager is associated with installation 'Installation1'.
+Creating or replacing default objects for queue manager 'HYD_MQ2'.
+Default objects statistics : 83 created. 0 replaced. 0 failed.
+Completing setup.
+Setup completed.
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+QMNAME(HYD_MQ2)                                           STATUS(Ended immediately)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ strmqm HYD_MQ2
+There are 88 days left in the trial period for this copy of IBM MQ.
+The system resource RLIMIT_NOFILE is set at an unusually low level for IBM MQ.
+IBM MQ queue manager 'HYD_MQ2' starting.
+The queue manager is associated with installation 'Installation1'.
+5 log records accessed on queue manager 'HYD_MQ2' during the log replay phase.
+Log replay for queue manager 'HYD_MQ2' complete.
+Transaction manager state recovered for queue manager 'HYD_MQ2'.
+IBM MQ queue manager 'HYD_MQ2' started using V9.2.0.0.
+-bash-4.2$ runmqsc HYD_MQ2
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager HYD_MQ2.
+
+
+display listerner(*)
+     1 : display listerner(*)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+display l
+
+AMQ8426I: Valid MQSC commands are:
+
+    DISPLAY APSTATUS
+    DISPLAY AUTHINFO
+    DISPLAY AUTHREC
+    DISPLAY AUTHSERV
+    DISPLAY CHANNEL
+    DISPLAY CHLAUTH
+    DISPLAY CHSTATUS
+    DISPLAY CLUSQMGR
+    DISPLAY COMMINFO
+    DISPLAY CONN
+    DISPLAY ENTAUTH
+    DISPLAY LISTENER
+    DISPLAY LSSTATUS
+    DISPLAY NAMELIST
+    DISPLAY POLICY
+    DISPLAY PROCESS
+    DISPLAY PUBSUB
+    DISPLAY QALIAS
+    DISPLAY QCLUSTER
+    DISPLAY QLOCAL
+    DISPLAY QMGR
+    DISPLAY QMODEL
+    DISPLAY QMSTATUS
+    DISPLAY QREMOTE
+    DISPLAY QSTATUS
+    DISPLAY QUEUE
+    DISPLAY SBSTATUS
+    DISPLAY SERVICE
+    DISPLAY SUB
+    DISPLAY SVSTATUS
+    DISPLAY TCLUSTER
+    DISPLAY TOPIC
+    DISPLAY TPSTATUS
+DISPLAY listener(*)
+     2 : DISPLAY listener(*)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+
+       :
+display listener(SYSTEM.DEFAULT.LISTENER.TCP)
+     3 : display listener(SYSTEM.DEFAULT.LISTENER.TCP)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)   CONTROL(MANUAL)
+   TRPTYPE(TCP)                            PORT(0)
+   IPADDR( )                               BACKLOG(0)
+   DESCR( )                                ALTDATE(2022-07-05)
+   ALTTIME(01.26.05)
+
+       :
+
+       :
+define listener(HYD_LIST) TRPTYPE(TCP) PORT(1415) CONTROL(QMGR)
+     4 : define listener(HYD_LIST) TRPTYPE(TCP) PORT(1415) CONTROL(QMGR)
+AMQ8626I: IBM MQ listener created.
+
+       :
+start listener(HYD_LIST)
+     5 : start listener(HYD_LIST)
+AMQ8021I: Request to start IBM MQ listener accepted.
+
+       :
+display lsstatus(*)
+     6 : display lsstatus(*)
+AMQ8631I: Display listener status details.
+   LISTENER(HYD_LIST)                      STATUS(RUNNING)
+   PID(7224)
+
+       :
+
+       :
+define channel(BAN_HYD_SEND) chltype(RCVR)
+     7 : define channel(BAN_HYD_SEND) chltype(RCVR)
+AMQ8014I: IBM MQ channel created.
+
+       :
+display channel(BAN_HYD_SEND)
+     8 : display channel(BAN_HYD_SEND)
+AMQ8414I: Display Channel details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(RCVR)
+   ALTDATE(2022-07-05)                     ALTTIME(01.29.59)
+   BATCHSZ(50)                             CERTLABL( )
+   COMPHDR(NONE)                           COMPMSG(NONE)
+   DESCR( )                                HBINT(300)
+   KAINT(AUTO)                             MAXMSGL(4194304)
+   MCAUSER( )                              MONCHL(QMGR)
+   MRDATA( )                               MREXIT( )
+   MRRTY(10)                               MRTMR(1000)
+   MSGDATA( )                              MSGEXIT( )
+   NPMSPEED(FAST)                          PUTAUT(DEF)
+   RCVDATA( )                              RCVEXIT( )
+   RESETSEQ(NO)                            SCYDATA( )
+   SCYEXIT( )                              SENDDATA( )
+   SENDEXIT( )                             SEQWRAP(999999999)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+   SSLPEER( )                              STATCHL(QMGR)
+   TRPTYPE(TCP)                            USEDLQ(YES)
+
+       :
+
+       :
+define ql(HYD_LOCAL)
+     9 : define ql(HYD_LOCAL)
+AMQ8006I: IBM MQ queue created.
+
+       :
+
+       :
+
+       :
+display chs(BAN_HYD_SEND)
+    10 : display chs(BAN_HYD_SEND)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(RCVR)
+   CONNAME(192.168.0.5)                    CURRENT
+   RQMNAME(BAN_QM1)                        STATUS(RUNNING)
+   SUBSTATE(RECEIVE)
+define qs(HYD_LOCAL)
+    11 : define qs(HYD_LOCAL)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+define q
+
+AMQ8426I: Valid MQSC commands are:
+
+    DEFINE AUTHINFO
+    DEFINE CHANNEL
+    DEFINE COMMINFO
+    DEFINE LISTENER
+    DEFINE NAMELIST
+    DEFINE PROCESS
+    DEFINE QALIAS
+    DEFINE QLOCAL
+    DEFINE QMODEL
+    DEFINE QREMOTE
+    DEFINE SERVICE
+    DEFINE SUB
+    DEFINE TOPIC
+display qs(HYD_LOCAL)
+    12 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qs(HYD_LOCAL)
+    13 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qs(HYD_LOCAL)
+    14 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(4)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(1)
+   QTIME( , )                              UNCOM(NO)
+display qs(SYSTEM.DEAD.LETTER.QUEUE)
+    15 : display qs(SYSTEM.DEAD.LETTER.QUEUE)
+AMQ8450I: Display queue status details.
+   QUEUE(SYSTEM.DEAD.LETTER.QUEUE)         TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qmgr DEADq
+    16 : display qmgr DEADq
+AMQ8408I: Display Queue Manager details.
+   QMNAME(HYD_MQ2)                         DEADQ( )
+
+       :
+
+       :
+alter qmgr DEADq(SYSTEM.DEAD.LETTER.QUEUE)
+    17 : alter qmgr DEADq(SYSTEM.DEAD.LETTER.QUEUE)
+AMQ8005I: IBM MQ queue manager changed.
+
+       :
+
+       :
+
+       :
+display qmgr DEADq
+    18 : display qmgr DEADq
+AMQ8408I: Display Queue Manager details.
+   QMNAME(HYD_MQ2)                         DEADQ(SYSTEM.DEAD.LETTER.QUEUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LOGS:
+
+login as: root
+root@192.168.0.5's password:
+Last login: Tue Jul  5 00:49:23 2022 from 192.168.0.8
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# su - mqm
+Last login: Tue Jul  5 00:59:27 PDT 2022 on pts/0
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ dspm
+-bash: dspm: command not found
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ crtmqm HYD_MQ2
+There are 88 days left in the trial period for this copy of IBM MQ.
+IBM MQ queue manager created.
+Directory '/var/mqm/qmgrs/HYD_MQ2' created.
+The queue manager is associated with installation 'Installation1'.
+Creating or replacing default objects for queue manager 'HYD_MQ2'.
+Default objects statistics : 83 created. 0 replaced. 0 failed.
+Completing setup.
+Setup completed.
+-bash-4.2$ dspmq
+QMNAME(BAN_QM1)                                           STATUS(Running)
+QMNAME(HYD_MQ2)                                           STATUS(Ended immediately)
+-bash-4.2$
+-bash-4.2$
+-bash-4.2$ strmqm HYD_MQ2
+There are 88 days left in the trial period for this copy of IBM MQ.
+The system resource RLIMIT_NOFILE is set at an unusually low level for IBM MQ.
+IBM MQ queue manager 'HYD_MQ2' starting.
+The queue manager is associated with installation 'Installation1'.
+5 log records accessed on queue manager 'HYD_MQ2' during the log replay phase.
+Log replay for queue manager 'HYD_MQ2' complete.
+Transaction manager state recovered for queue manager 'HYD_MQ2'.
+IBM MQ queue manager 'HYD_MQ2' started using V9.2.0.0.
+-bash-4.2$ runmqsc HYD_MQ2
+5724-H72 (C) Copyright IBM Corp. 1994, 2020.
+Starting MQSC for queue manager HYD_MQ2.
+
+
+display listerner(*)
+     1 : display listerner(*)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+display l
+
+AMQ8426I: Valid MQSC commands are:
+
+    DISPLAY APSTATUS
+    DISPLAY AUTHINFO
+    DISPLAY AUTHREC
+    DISPLAY AUTHSERV
+    DISPLAY CHANNEL
+    DISPLAY CHLAUTH
+    DISPLAY CHSTATUS
+    DISPLAY CLUSQMGR
+    DISPLAY COMMINFO
+    DISPLAY CONN
+    DISPLAY ENTAUTH
+    DISPLAY LISTENER
+    DISPLAY LSSTATUS
+    DISPLAY NAMELIST
+    DISPLAY POLICY
+    DISPLAY PROCESS
+    DISPLAY PUBSUB
+    DISPLAY QALIAS
+    DISPLAY QCLUSTER
+    DISPLAY QLOCAL
+    DISPLAY QMGR
+    DISPLAY QMODEL
+    DISPLAY QMSTATUS
+    DISPLAY QREMOTE
+    DISPLAY QSTATUS
+    DISPLAY QUEUE
+    DISPLAY SBSTATUS
+    DISPLAY SERVICE
+    DISPLAY SUB
+    DISPLAY SVSTATUS
+    DISPLAY TCLUSTER
+    DISPLAY TOPIC
+    DISPLAY TPSTATUS
+DISPLAY listener(*)
+     2 : DISPLAY listener(*)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)
+
+       :
+display listener(SYSTEM.DEFAULT.LISTENER.TCP)
+     3 : display listener(SYSTEM.DEFAULT.LISTENER.TCP)
+AMQ8630I: Display listener information details.
+   LISTENER(SYSTEM.DEFAULT.LISTENER.TCP)   CONTROL(MANUAL)
+   TRPTYPE(TCP)                            PORT(0)
+   IPADDR( )                               BACKLOG(0)
+   DESCR( )                                ALTDATE(2022-07-05)
+   ALTTIME(01.26.05)
+
+       :
+
+       :
+define listener(HYD_LIST) TRPTYPE(TCP) PORT(1415) CONTROL(QMGR)
+     4 : define listener(HYD_LIST) TRPTYPE(TCP) PORT(1415) CONTROL(QMGR)
+AMQ8626I: IBM MQ listener created.
+
+       :
+start listener(HYD_LIST)
+     5 : start listener(HYD_LIST)
+AMQ8021I: Request to start IBM MQ listener accepted.
+
+       :
+display lsstatus(*)
+     6 : display lsstatus(*)
+AMQ8631I: Display listener status details.
+   LISTENER(HYD_LIST)                      STATUS(RUNNING)
+   PID(7224)
+
+       :
+
+       :
+define channel(BAN_HYD_SEND) chltype(RCVR)
+     7 : define channel(BAN_HYD_SEND) chltype(RCVR)
+AMQ8014I: IBM MQ channel created.
+
+       :
+display channel(BAN_HYD_SEND)
+     8 : display channel(BAN_HYD_SEND)
+AMQ8414I: Display Channel details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(RCVR)
+   ALTDATE(2022-07-05)                     ALTTIME(01.29.59)
+   BATCHSZ(50)                             CERTLABL( )
+   COMPHDR(NONE)                           COMPMSG(NONE)
+   DESCR( )                                HBINT(300)
+   KAINT(AUTO)                             MAXMSGL(4194304)
+   MCAUSER( )                              MONCHL(QMGR)
+   MRDATA( )                               MREXIT( )
+   MRRTY(10)                               MRTMR(1000)
+   MSGDATA( )                              MSGEXIT( )
+   NPMSPEED(FAST)                          PUTAUT(DEF)
+   RCVDATA( )                              RCVEXIT( )
+   RESETSEQ(NO)                            SCYDATA( )
+   SCYEXIT( )                              SENDDATA( )
+   SENDEXIT( )                             SEQWRAP(999999999)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+   SSLPEER( )                              STATCHL(QMGR)
+   TRPTYPE(TCP)                            USEDLQ(YES)
+
+       :
+
+       :
+define ql(HYD_LOCAL)
+     9 : define ql(HYD_LOCAL)
+AMQ8006I: IBM MQ queue created.
+
+       :
+
+       :
+
+       :
+display chs(BAN_HYD_SEND)
+    10 : display chs(BAN_HYD_SEND)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(BAN_HYD_SEND)                   CHLTYPE(RCVR)
+   CONNAME(192.168.0.5)                    CURRENT
+   RQMNAME(BAN_QM1)                        STATUS(RUNNING)
+   SUBSTATE(RECEIVE)
+define qs(HYD_LOCAL)
+    11 : define qs(HYD_LOCAL)
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+define q
+
+AMQ8426I: Valid MQSC commands are:
+
+    DEFINE AUTHINFO
+    DEFINE CHANNEL
+    DEFINE COMMINFO
+    DEFINE LISTENER
+    DEFINE NAMELIST
+    DEFINE PROCESS
+    DEFINE QALIAS
+    DEFINE QLOCAL
+    DEFINE QMODEL
+    DEFINE QREMOTE
+    DEFINE SERVICE
+    DEFINE SUB
+    DEFINE TOPIC
+display qs(HYD_LOCAL)
+    12 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qs(HYD_LOCAL)
+    13 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qs(HYD_LOCAL)
+    14 : display qs(HYD_LOCAL)
+AMQ8450I: Display queue status details.
+   QUEUE(HYD_LOCAL)                        TYPE(QUEUE)
+   CURDEPTH(4)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(1)
+   QTIME( , )                              UNCOM(NO)
+display qs(SYSTEM.DEAD.LETTER.QUEUE)
+    15 : display qs(SYSTEM.DEAD.LETTER.QUEUE)
+AMQ8450I: Display queue status details.
+   QUEUE(SYSTEM.DEAD.LETTER.QUEUE)         TYPE(QUEUE)
+   CURDEPTH(0)                             CURFSIZE(1)
+   CURMAXFS(2088960)                       IPPROCS(0)
+   LGETDATE( )                             LGETTIME( )
+   LPUTDATE( )                             LPUTTIME( )
+   MEDIALOG( )                             MONQ(OFF)
+   MSGAGE( )                               OPPROCS(0)
+   QTIME( , )                              UNCOM(NO)
+display qmgr DEADq
+    16 : display qmgr DEADq
+AMQ8408I: Display Queue Manager details.
+   QMNAME(HYD_MQ2)                         DEADQ( )
+
+       :
+
+       :
+alter qmgr DEADq(SYSTEM.DEAD.LETTER.QUEUE)
+    17 : alter qmgr DEADq(SYSTEM.DEAD.LETTER.QUEUE)
+AMQ8005I: IBM MQ queue manager changed.
+
+       :
+
+       :
+
+       :
+display qmgr DEADq
+    18 : display qmgr DEADq
+AMQ8408I: Display Queue Manager details.
+   QMNAME(HYD_MQ2)                         DEADQ(SYSTEM.DEAD.LETTER.QUEUE)
+
+
+
+https://www.ibm.com/docs/sl/ibm-mq/8.0?topic=explorer-mq-tutorials
+
+https://www.ibm.com/docs/sl/ibm-mq/8.0?topic=tutorials-tutorial-2-sending-message-remote-queue
